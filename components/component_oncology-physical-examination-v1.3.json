@@ -1,0 +1,2023 @@
+{
+	"name": "component_oncology-physical-examination-v1.2",
+	"uuid": "xxxx",
+	"processor": "EncounterFormProcessor",
+	"pages": [
+		{
+			"label": "Physical Examination",
+			"sections": [
+				{
+					"label": "Physical Examination",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "ECOG performance index:",
+							"id": "ecogpsindx",
+							"type": "obs",
+							"questionOptions": {
+								"concept": "d54c968d-6f74-4df2-a9dd-20a758597092",
+								"rendering": "select",
+								"answers": [
+									{
+										"label": "0 (Normal activity)",
+										"concept": "a899e7b4-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "1 (Symptomatic but ambulatory)",
+										"concept": "7bbd88f0-39a3-4802-9923-06b762100800"
+									},
+									{
+										"label": "2 (Debilitated, but bedridden < 50% of the day)",
+										"concept": "c436e2c7-fd7f-4ed0-a06d-7cbef2733901"
+									},
+									{
+										"label": "3 (Debilitated, bedridden > 50% of the day)",
+										"concept": "f7d5e61f-3307-42b2-9314-9040da12f29a"
+									},
+									{
+										"label": "4 (100% Bedridden)",
+										"concept": "cc96cdb5-c62b-4d29-805d-3f48d5a285cb"
+									}
+								]
+							}
+						},
+						{
+							"label": "HEENT exam:",
+							"id": "hnt",
+							"type": "obs",
+							"questionOptions": {
+								"concept": "a899edcc-1350-11df-a1f1-0026b9348838",
+								"rendering": "select",
+								"answers": [
+									{
+										"label": "Normal",
+										"concept": "a899e7b4-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Pallor",
+										"concept": "a8a6f9a4-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Jaundice",
+										"concept": "a89366a0-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Cyanosis",
+										"concept": "a8965298-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Dehydration",
+										"concept": "a898d5fe-1350-11df-a1f1-0026b9348838"
+									}
+								]
+							}
+						},
+						{
+							"label": "Chest exam:",
+							"id": "chstex",
+							"type": "obs",
+							"questionOptions": {
+								"concept": "a899eeb2-1350-11df-a1f1-0026b9348838",
+								"rendering": "select",
+								"answers": [
+									{
+										"label": "Not done",
+										"concept": "a899ea48-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Normal",
+										"concept": "a899e7b4-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Abnormal",
+										"concept": "a899e890-1350-11df-a1f1-0026b9348838"
+									}
+								]
+							}
+						},
+						{
+							"label": "Heart exam:",
+							"id": "hrtexm",
+							"type": "obs",
+							"questionOptions": {
+								"concept": "a899ef84-1350-11df-a1f1-0026b9348838",
+								"rendering": "select",
+								"answers": [
+									{
+										"label": "Not done",
+										"concept": "a899ea48-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Normal",
+										"concept": "a899e7b4-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Abnormal",
+										"concept": "a899e890-1350-11df-a1f1-0026b9348838"
+									}
+								]
+							}
+						},
+						{
+							"label": "Abdomen exam:",
+							"id": "abdexm",
+							"type": "obs",
+							"questionOptions": {
+								"concept": "a899f04c-1350-11df-a1f1-0026b9348838",
+								"rendering": "select",
+								"answers": [
+									{
+										"label": "Not done",
+										"concept": "a899ea48-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Normal",
+										"concept": "a899e7b4-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Abnormal",
+										"concept": "a899e890-1350-11df-a1f1-0026b9348838"
+									}
+								]
+							}
+						},
+						{
+							"label": "Urogenital exam:",
+							"id": "uroexm",
+							"type": "obs",
+							"questionOptions": {
+								"concept": "a899f11e-1350-11df-a1f1-0026b9348838",
+								"rendering": "select",
+								"answers": [
+									{
+										"label": "Not done",
+										"concept": "a899ea48-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Normal",
+										"concept": "a899e7b4-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Abnormal",
+										"concept": "a899e890-1350-11df-a1f1-0026b9348838"
+									}
+								]
+							}
+						},
+						{
+							"label": "Extremities exam:",
+							"id": "extrexm",
+							"type": "obs",
+							"questionOptions": {
+								"concept": "a899f1e6-1350-11df-a1f1-0026b9348838",
+								"rendering": "select",
+								"answers": [
+									{
+										"label": "Not done",
+										"concept": "a899ea48-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Normal",
+										"concept": "a899e7b4-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Abnormal",
+										"concept": "a899e890-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Edema",
+										"concept": "a896537e-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Leg ulcers",
+										"concept": "a898b132-1350-11df-a1f1-0026b9348838"
+									}
+								]
+							}
+						},
+						{
+							"label": "Nodal survey exam:",
+							"id": "nodsuryex",
+							"type": "obs",
+							"questionOptions": {
+								"concept": "a899ecdc-1350-11df-a1f1-0026b9348838",
+								"rendering": "select",
+								"answers": [
+									{
+										"label": "Not done",
+										"concept": "a899ea48-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Normal",
+										"concept": "a899e7b4-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Abnormal",
+										"concept": "a899e890-1350-11df-a1f1-0026b9348838"
+									}
+								]
+							}
+						},
+						{
+							"label": "Masses or skin lesions:",
+							"id": "skinless",
+							"type": "obs",
+							"questionOptions": {
+								"concept": "a899ec00-1350-11df-a1f1-0026b9348838",
+								"rendering": "select",
+								"answers": [
+									{
+										"label": "None",
+										"concept": "a899e0ac-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Normal",
+										"concept": "a899e7b4-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Abnormal",
+										"concept": "a899e890-1350-11df-a1f1-0026b9348838"
+									}
+								]
+							}
+						},
+						{
+							"label": "Musculoskeletal exam:",
+							"id": "muscoskel",
+							"type": "obs",
+							"questionOptions": {
+								"concept": "a899f2ae-1350-11df-a1f1-0026b9348838",
+								"rendering": "select",
+								"answers": [
+									{
+										"label": "Not done",
+										"concept": "a899ea48-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Normal",
+										"concept": "a899e7b4-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Abnormal",
+										"concept": "a899e890-1350-11df-a1f1-0026b9348838"
+									}
+								]
+							}
+						},
+						{
+							"label": "Neurologic exam:",
+							"id": "neuexam",
+							"type": "obs",
+							"questionOptions": {
+								"concept": "a899f380-1350-11df-a1f1-0026b9348838",
+								"rendering": "select",
+								"answers": [
+									{
+										"label": "Not done",
+										"concept": "a899ea48-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Normal",
+										"concept": "a899e7b4-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Abnormal",
+										"concept": "a899e890-1350-11df-a1f1-0026b9348838"
+									}
+								]
+							}
+						},
+						{
+							"label": "Physical exam notes:",
+							"type": "obs",
+							"questionOptions": {
+								"concept": "a8a0cc32-1350-11df-a1f1-0026b9348838",
+								"rendering": "textarea",
+								"rows": 10
+							},
+							"validators": []
+						}
+					]
+				},
+				{
+					"label": "Diagnosis",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "How was diagnosis established?",
+							"id": "howdiagest",
+							"type": "obs",
+							"questionOptions": {
+								"concept": "a3179f85-bc07-449b-ae2f-aef75558f0c7",
+								"rendering": "select",
+								"answers": [
+									{
+										"concept": "c0c9ef93-368c-4815-899f-c373a01a3817",
+										"label": "HbE"
+									},
+									{
+										"concept": "f7322263-4311-44d6-b75e-bff9211e4cc6",
+										"label": "Sickle cell screen"
+									}
+								],
+								"showDate": "true",
+								"shownDateOptions": {
+									"validators": [
+										{
+											"type": "date"
+										},
+										{
+											"type": "js_expression",
+											"failsWhenExpression": "!isEmpty(howdiagest) && isEmpty(myValue)",
+											"message": "Diagnosis date is required."
+										}
+									],
+									"hide": {
+										"hideWhenExpression": "isEmpty(howdiagest)"
+									}
+								}
+							},
+							"validators": []
+						},
+						{
+							"label": "Hemoglobin F%:",
+							"id": "hemoglobinF",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "number",
+								"concept": "5c439bb4-4b25-4e3a-8e03-ce1c8f9c1f52",
+								"max": "100",
+								"min": "0"
+							},
+							"validators": [],
+							"hide": {
+								"hideWhenExpression": "howdiagest !== 'c0c9ef93-368c-4815-899f-c373a01a3817'"
+							}
+						},
+						{
+							"label": "Hemoglobin A%:",
+							"id": "hemoglobinA",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "number",
+								"concept": "bc67ddf5-9aef-435e-8f03-7f817e4b98a6",
+								"max": "100",
+								"min": "0"
+							},
+							"validators": [],
+							"hide": {
+								"hideWhenExpression": "howdiagest !== 'c0c9ef93-368c-4815-899f-c373a01a3817'"
+							}
+						},
+						{
+							"label": "Hemoglobin S%:",
+							"id": "hemoglobinS",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "number",
+								"concept": "14b96fb0-83ac-420d-8295-b72e0331f4e2",
+								"max": "100",
+								"min": "0"
+							},
+							"validators": [],
+							"hide": {
+								"hideWhenExpression": "howdiagest !== 'c0c9ef93-368c-4815-899f-c373a01a3817'"
+							}
+						},
+						{
+							"label": "Hemoglobin A2/C%:",
+							"id": "hemoglobinA2",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "number",
+								"concept": "c66b2f4c-87af-4de5-93a9-209141f167e4",
+								"max": "100",
+								"min": "0"
+							},
+							"validators": [],
+							"hide": {
+								"hideWhenExpression": "howdiagest !== 'c0c9ef93-368c-4815-899f-c373a01a3817'"
+							}
+						},
+						{
+							"label": "Sickle cell screening test diagnosis:",
+							"id": "sickscrdiag",
+							"type": "obs",
+							"questionOptions": {
+								"concept": "f7322263-4311-44d6-b75e-bff9211e4cc6",
+								"rendering": "select",
+								"answers": [
+									{
+										"concept": "a896f3a6-1350-11df-a1f1-0026b9348838",
+										"label": "Positive"
+									},
+									{
+										"concept": "a896d2cc-1350-11df-a1f1-0026b9348838",
+										"label": "Negative"
+									}
+								]
+							},
+							"validators": [],
+							"hide": {
+								"hideWhenExpression": "howdiagest !== 'f7322263-4311-44d6-b75e-bff9211e4cc6'"
+							}
+						},
+						{
+							"label": "Diagnosis",
+							"id": "probAdded",
+							"questionOptions": {
+								"concept": "a8ae835e-1350-11df-a1f1-0026b9348838",
+								"rendering": "problem"
+							},
+							"type": "obs",
+							"validators": []
+						}
+					]
+				},
+				{
+					"label": "Imaging",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "medical imaging test ordered:",
+							"id": "imagingTest",
+							"questionOptions": {
+								"concept": "a89c2268-1350-11df-a1f1-0026b9348838",
+								"rendering": "select",
+								"answers": [
+									{
+										"concept": "5771e408-a5e5-402b-9f29-b76106dfc71a",
+										"label": "Medical imaging"
+									},
+									{
+										"concept": "a899e0ac-1350-11df-a1f1-0026b9348838",
+										"label": "None"
+									}
+								]
+							},
+							"type": "obs",
+							"validators": []
+						},
+						{
+							"label": "Medical imaging notes:",
+							"type": "obs",
+							"questionOptions": {
+								"concept": "5e4dc798-2cce-4a1a-97e9-bcf22d64b07c",
+								"rendering": "textarea",
+								"rows": 18
+							},
+							"validators": [],
+							"hide": {
+								"hideWhenExpression": "isEmpty(imagingTest)"
+							}
+						}
+					]
+				},
+				{
+					"label": "Procedure Done",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"type": "obsGroup",
+							"label": "Procedure this visit",
+							"id": "procedureVisit",
+							"questionOptions": {
+								"concept": "0dda52ff-15a0-434d-9685-78817e799a5c",
+								"rendering": "repeating"
+							},
+							"questions": [
+								{
+									"label": "Procedure done this visit",
+									"id": "ProceDone",
+									"required": "true",
+									"questionOptions": {
+										"concept": "c9e077f0-7a61-447a-937a-c96de21a7894",
+										"rendering": "select",
+										"answers": [
+											{
+												"concept": "a899e0ac-1350-11df-a1f1-0026b9348838",
+												"label": "None"
+											},
+											{
+												"concept": "c3fb40a5-6c15-47ca-8d62-7a57a3f2f65a",
+												"label": "Biopsy"
+											},
+											{
+												"concept": "a0f80527-8410-44ec-ac58-546005464c34",
+												"label": "Polypectomy"
+											},
+											{
+												"concept": "65a17fd9-f00f-4692-9106-51fe2d806088",
+												"label": "Core needle biopsy"
+											},
+                      {
+                        "concept": "",
+                        "label": "Cone biopsy"
+                      },
+											{
+												"label": "Other",
+												"concept": "a8aaf3e2-1350-11df-a1f1-0026b9348838"
+											}
+										]
+									},
+									"type": "obs",
+									"validators": []
+								},
+								{
+									"label": "Other procedure (specify):",
+									"type": "obs",
+									"questionOptions": {
+										"concept": "a8a06fc6-1350-11df-a1f1-0026b9348838",
+										"rendering": "text",
+										"placeholder": "Indicate other procedure done"
+									},
+									"validators": [],
+									"hide": {
+										"hideWhenExpression": "ProceDone !== 'a8aaf3e2-1350-11df-a1f1-0026b9348838'"
+									}
+								}
+							]
+						}
+					]
+				},
+				{
+					"label": "Physical Exam",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"type": "obsGroup",
+							"label": "Chief complaints detailed",
+							"id": "chiefcomplaintdetiled",
+							"questionOptions": {
+								"concept": "9014962e-3efe-46b0-a393-c8c8bddadaa7",
+								"rendering": "repeating"
+							},
+							"questions": [
+								{
+									"label": "Chief complaint:",
+									"id": "cComplain",
+									"type": "obs",
+									"historicalExpression": "_.isEmpty(HD.getObject('prevEnc').getValue('a8a6ddb6-1350-11df-a1f1-0026b9348838')) ? undefined : HD.getObject('prevEnc').getValue('a8a6ddb6-1350-11df-a1f1-0026b9348838')",
+									"questionOptions": {
+										"concept": "a8a6ddb6-1350-11df-a1f1-0026b9348838",
+										"rendering": "select",
+										"answers": [
+											{
+												"label": "Bloody Sputum",
+												"concept": "d7dab0c1-9d50-460e-88a5-614170f200cd"
+											},
+											{
+												"label": "Chest pains",
+												"concept": "a892e4b4-1350-11df-a1f1-0026b9348838"
+											},
+											{
+												"label": "Difficulty in Swallowing",
+												"concept": "a8ad0b1e-1350-11df-a1f1-0026b9348838"
+											},
+											{
+												"label": "Hoarseness of voice",
+												"concept": "e3088601-d3b8-4b32-b6d9-b60c4d45ad1d"
+											},
+											{
+												"label": "Shortness of Breath/wheezing",
+												"concept": "a8ad1276-1350-11df-a1f1-0026b9348838"
+											},
+											{
+												"label": "Unexplained Cough",
+												"concept": "a890d73c-1350-11df-a1f1-0026b9348838"
+											},
+											{
+												"label": "Unexplained Weight Loss",
+												"concept": "a89807f0-1350-11df-a1f1-0026b9348838"
+											},
+											{
+												"label": "Other",
+												"concept": "a8aaf3e2-1350-11df-a1f1-0026b9348838"
+											}
+										]
+									}
+								},
+								{
+									"label": "Specify other complaints:",
+									"type": "obs",
+									"id": "otherComplaints",
+									"historicalExpression": "_.isEmpty(HD.getObject('prevEnc').getValue('a8a06fc6-1350-11df-a1f1-0026b9348838')) ? undefined : HD.getObject('prevEnc').getValue('a8a06fc6-1350-11df-a1f1-0026b9348838')",
+									"questionOptions": {
+										"concept": "a8a06fc6-1350-11df-a1f1-0026b9348838",
+										"rendering": "text"
+									},
+									"validators": [],
+									"hide": {
+										"hideWhenExpression": "cComplain !=='a8aaf3e2-1350-11df-a1f1-0026b9348838'"
+									}
+								},
+								{
+									"label": "Complain duration:",
+									"id": "coughDuration",
+									"type": "obs",
+									"questionOptions": {
+										"concept": "5e5b7ff2-f0e7-44a2-ac11-ab3d140bf925",
+										"rendering": "select",
+										"answers": [
+											{
+												"label": "Days",
+												"concept": "a899b9c4-1350-11df-a1f1-0026b9348838"
+											},
+											{
+												"label": "Weeks",
+												"concept": "a899baaa-1350-11df-a1f1-0026b9348838"
+											},
+											{
+												"label": "Months",
+												"concept": "a899bb90-1350-11df-a1f1-0026b9348838"
+											},
+											{
+												"label": "Years",
+												"concept": "ac6a274b-a494-486d-83c1-4abab7e4442c"
+											}
+										]
+									},
+									"validators": [],
+									"hide": {
+										"hideWhenExpression": "isEmpty(cComplain)"
+									}
+								},
+								{
+									"label": "Number of days:",
+									"id": "numberDays",
+									"type": "obs",
+									"questionOptions": {
+										"concept": "a8a05e82-1350-11df-a1f1-0026b9348838",
+										"rendering": "number",
+										"max": "365",
+										"min": "0"
+									},
+									"validators": [],
+									"hide": {
+										"hideWhenExpression": "coughDuration !== 'a899b9c4-1350-11df-a1f1-0026b9348838'"
+									}
+								},
+								{
+									"label": "Number of weeks:",
+									"id": "numberWeeks",
+									"type": "obs",
+									"questionOptions": {
+										"concept": "a8a05f4a-1350-11df-a1f1-0026b9348838",
+										"rendering": "number",
+										"max": "52",
+										"min": "0"
+									},
+									"validators": [],
+									"hide": {
+										"hideWhenExpression": "coughDuration !== 'a899baaa-1350-11df-a1f1-0026b9348838'"
+									}
+								},
+								{
+									"label": "Number of months:",
+									"id": "numberMonths",
+									"type": "obs",
+									"questionOptions": {
+										"concept": "a8a06008-1350-11df-a1f1-0026b9348838",
+										"rendering": "number",
+										"max": "12",
+										"min": "0"
+									},
+									"validators": [],
+									"hide": {
+										"hideWhenExpression": "coughDuration !== 'a899bb90-1350-11df-a1f1-0026b9348838'"
+									}
+								},
+								{
+									"label": "Number of years:",
+									"id": "numberYears",
+									"type": "obs",
+									"questionOptions": {
+										"concept": "1b5d33b9-9e7c-4cfb-97bd-c0bcf5e03120",
+										"rendering": "number",
+										"max": "50",
+										"min": "0"
+									},
+									"validators": [],
+									"hide": {
+										"hideWhenExpression": "coughDuration !== 'ac6a274b-a494-486d-83c1-4abab7e4442c'"
+									}
+								}
+							]
+						},
+						{
+							"label": "ECOG performance index:",
+							"id": "ecogpsindex",
+							"type": "obs",
+							"questionOptions": {
+								"concept": "d54c968d-6f74-4df2-a9dd-20a758597092",
+								"rendering": "select",
+								"answers": [
+									{
+										"label": "0 (Normal activity)",
+										"concept": "a899e7b4-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "1 (Symptomatic but ambulatory)",
+										"concept": "7bbd88f0-39a3-4802-9923-06b762100800"
+									},
+									{
+										"label": "2 (Debilitated, but bedridden < 50% of the day)",
+										"concept": "c436e2c7-fd7f-4ed0-a06d-7cbef2733901"
+									},
+									{
+										"label": "3 (Debilitated, bedridden > 50% of the day)",
+										"concept": "f7d5e61f-3307-42b2-9314-9040da12f29a"
+									},
+									{
+										"label": "4 (100% Bedridden)",
+										"concept": "cc96cdb5-c62b-4d29-805d-3f48d5a285cb"
+									}
+								]
+							}
+						},
+						{
+							"label": "General exam:",
+							"id": "genExam",
+							"type": "obs",
+							"questionOptions": {
+								"concept": "a899eb24-1350-11df-a1f1-0026b9348838",
+								"rendering": "multiCheckbox",
+								"answers": [
+									{
+										"label": "Normal",
+										"concept": "a899e7b4-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Cyanosis",
+										"concept": "a8965298-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Edema",
+										"concept": "45dcead5-ffff-4dc1-a340-3e5eb27d0286"
+									},
+									{
+										"label": "Dehydration",
+										"concept": "a898d5fe-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Jaundice",
+										"concept": "a89366a0-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Pallor",
+										"concept": "a8a6f9a4-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Wasting",
+										"concept": "a8a6ce8e-1350-11df-a1f1-0026b9348838"
+									}
+								]
+							}
+						},
+						{
+							"label": "HEENT exam:",
+							"id": "hntExam",
+							"type": "obs",
+							"questionOptions": {
+								"concept": "a899edcc-1350-11df-a1f1-0026b9348838",
+								"rendering": "multiCheckbox",
+								"answers": [
+									{
+										"label": "Not done",
+										"concept": "a899ea48-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Normal",
+										"concept": "a899e7b4-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Scleral Icterus (Eyes)",
+										"concept": "a8a6c704-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Pale conjunctiva (Eyes)",
+										"concept": "a8957ad0-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Deviated trachea (Neck)",
+										"concept": "a8957846-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Nuchal rigidity (Neck)",
+										"concept": "a8a6b476-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Thrush (Mouth)",
+										"concept": "a8a8209a-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Other oral lesions",
+										"concept": "64c3d2d7-8dfd-49b1-b5b2-c3b3690b23c7"
+									}
+								]
+							}
+						},
+						{
+							"label": "Chest exam:",
+							"id": "chestExm",
+							"type": "obs",
+							"questionOptions": {
+								"concept": "a899eeb2-1350-11df-a1f1-0026b9348838",
+								"rendering": "multiCheckbox",
+								"answers": [
+									{
+										"label": "Not done",
+										"concept": "a899ea48-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Normal",
+										"concept": "a899e7b4-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Breath sounds diminished",
+										"concept": "a8a67ce0-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Bronchial breath sounds",
+										"concept": "a8a67db2-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Crepitations",
+										"concept": "a8a686e0-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Dullness to percussion",
+										"concept": "a8a69108-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Rhonchi/Wheezes",
+										"concept": "a8a6d53c-1350-11df-a1f1-0026b9348838"
+									}
+								]
+							}
+						},
+						{
+							"type": "obsGroup",
+							"label": "Breast findings detailed",
+							"id": "breastFindingsD",
+							"questionOptions": {
+								"concept": "11fa985f-9c31-4e33-8db4-6c7aee131a58",
+								"rendering": "repeating"
+							},
+							"questions": [
+								{
+									"label": "Breast findings:",
+									"id": "breastfinds",
+									"type": "obs",
+									"questionOptions": {
+										"rendering": "select",
+										"concept": "a8b017dc-1350-11df-a1f1-0026b9348838",
+										"answers": [
+											{
+												"concept": "a899e7b4-1350-11df-a1f1-0026b9348838",
+												"label": "Normal"
+											},
+											{
+												"concept": "a899e890-1350-11df-a1f1-0026b9348838",
+												"label": "Abnormal"
+											},
+											{
+												"concept": "2e7ba1f6-861f-45db-9a64-2ffcc759efde",
+												"label": "Fine nodularity"
+											},
+											{
+												"concept": "e4b44e55-a6ec-4e38-9f3f-a63e171c3ec0",
+												"label": "Dense nodularity"
+											},
+											{
+												"concept": "76b2df1b-d142-4375-88c4-c4be4a070564",
+												"label": "Skin edema"
+											},
+											{
+												"concept": "36f50f31-b1d6-41cf-91c9-cc6a4bd363f0",
+												"label": "Nipple/areolar change"
+											},
+											{
+												"concept": "a8a775a0-1350-11df-a1f1-0026b9348838",
+												"label": "Tenderness"
+											},
+											{
+												"concept": "4dd41494-15c7-4d93-88c1-1dab8c7bc2c7",
+												"label": "Nipple discharge"
+											},
+											{
+												"concept": "a8b016b0-1350-11df-a1f1-0026b9348838",
+												"label": "Breast mass"
+											}
+										]
+									},
+									"validators": []
+								},
+								{
+									"label": "Breast finding location:",
+									"id": "breastFindingLoc",
+									"type": "obs",
+									"questionOptions": {
+										"rendering": "select",
+										"concept": "ed816400-400e-4f34-8486-130514276016",
+										"answers": [
+											{
+												"concept": "a8a69554-1350-11df-a1f1-0026b9348838",
+												"label": "Right"
+											},
+											{
+												"concept": "a8a69234-1350-11df-a1f1-0026b9348838",
+												"label": "Left"
+											},
+											{
+												"concept": "9c905441-58d8-4809-aedd-7a5b0c1aa8e5",
+												"label": "Cyclic"
+											}
+										]
+									},
+									"validators": [],
+									"hide": {
+										"hideWhenExpression": "isEmpty(breastfinds) || breastfinds === 'a899e7b4-1350-11df-a1f1-0026b9348838'"
+									}
+								},
+								{
+									"label": "Breast finding quadrant:",
+									"id": "breastAnatomicLoc",
+									"type": "obs",
+									"questionOptions": {
+										"rendering": "select",
+										"concept": "d643cb0d-aa23-4149-b1c9-6fb024886e05",
+										"answers": [
+											{
+												"concept": "a8a6760a-1350-11df-a1f1-0026b9348838",
+												"label": "Right upper quadrant"
+											},
+											{
+												"concept": "a8a047f8-1350-11df-a1f1-0026b9348838",
+												"label": "Left upper quadrant"
+											},
+											{
+												"concept": "a8a03cf4-1350-11df-a1f1-0026b9348838",
+												"label": "Right lower quadrant"
+											},
+											{
+												"concept": "a8a66d7c-1350-11df-a1f1-0026b9348838",
+												"label": "Left lower quadrant"
+											},
+											{
+												"concept": "845b02c4-be3b-4c79-bbde-35cae76aba94",
+												"label": "Areolar"
+											}
+										]
+									},
+									"validators": [],
+									"hide": {
+										"hideWhenExpression": "isEmpty(breastfinds) || breastfinds === 'a899e7b4-1350-11df-a1f1-0026b9348838'"
+									}
+								}
+							]
+						},
+						{
+							"label": "Heart exam:",
+							"id": "hertExam",
+							"type": "obs",
+							"questionOptions": {
+								"concept": "a899ef84-1350-11df-a1f1-0026b9348838",
+								"rendering": "multiCheckbox",
+								"answers": [
+									{
+										"label": "Not done",
+										"concept": "a899ea48-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Normal",
+										"concept": "a899e7b4-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Abnormal sounds",
+										"concept": "a899e96c-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Diastolic rumble",
+										"concept": "a8a6af58-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Holosystolic",
+										"concept": "a8a6ada0-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Pericardial rub",
+										"concept": "a8a6b980-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "S3 gallop",
+										"concept": "a8962bec-1350-11df-a1f1-0026b9348838"
+									}
+								]
+							}
+						},
+						{
+							"label": "Abdomen exam:",
+							"id": "abdoExm",
+							"type": "obs",
+							"questionOptions": {
+								"concept": "a899f04c-1350-11df-a1f1-0026b9348838",
+								"rendering": "multiCheckbox",
+								"answers": [
+									{
+										"label": "Not done",
+										"concept": "a899ea48-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Normal",
+										"concept": "a899e7b4-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Abdominal mass",
+										"concept": "a8a66ca0-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Ascites",
+										"concept": "a896464a-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Hepatomegaly",
+										"concept": "a8a4cd28-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Splenomegaly",
+										"concept": "a8a4cdfa-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Tenderness",
+										"concept": "a8a66e58-1350-11df-a1f1-0026b9348838"
+									}
+								]
+							}
+						},
+						{
+							"label": "Liver size in cm:",
+							"id": "liverSize",
+							"type": "obs",
+							"questionOptions": {
+								"concept": "a8a6a454-1350-11df-a1f1-0026b9348838",
+								"rendering": "number",
+								"min": "0"
+							},
+							"validators": [],
+							"hide": {
+								"hideWhenExpression": "abdoExm !== 'a8a4cd28-1350-11df-a1f1-0026b9348838'"
+							}
+						},
+						{
+							"label": "Spleen size in cm:",
+							"id": "spleenSize",
+							"type": "obs",
+							"questionOptions": {
+								"concept": "a8a6c984-1350-11df-a1f1-0026b9348838",
+								"rendering": "number",
+								"min": "0"
+							},
+							"validators": [],
+							"hide": {
+								"hideWhenExpression": "abdoExm !== 'a8a4cdfa-1350-11df-a1f1-0026b9348838'"
+							}
+						},
+						{
+							"label": "Abdominal mass location:",
+							"id": "abdoMassLoc",
+							"type": "obs",
+							"questionOptions": {
+								"concept": "3229c7c0-c04a-4988-ae67-67d6c0587e8c",
+								"rendering": "select",
+								"answers": [
+									{
+										"label": "Epigastric",
+										"concept": "a8a66944-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Left lower quadrant",
+										"concept": "a8a66d7c-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Left upper quadrant",
+										"concept": "a8a047f8-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Right upper quadrant",
+										"concept": "a8a6760a-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Right lower quadrant",
+										"concept": "a8a03cf4-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Suprapubic",
+										"concept": "a8964122-1350-11df-a1f1-0026b9348838"
+									}
+								]
+							},
+							"validators": [],
+							"hide": {
+								"hideWhenExpression": "abdoExm !== 'a8a66ca0-1350-11df-a1f1-0026b9348838'"
+							}
+						},
+						{
+							"label": "Abdominal tenderness location:",
+							"id": "abdotenLoc",
+							"type": "obs",
+							"questionOptions": {
+								"concept": "a8a057e8-1350-11df-a1f1-0026b9348838",
+								"rendering": "select",
+								"answers": [
+									{
+										"label": "Epigastric",
+										"concept": "a8a66944-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Left lower quadrant",
+										"concept": "a8a66d7c-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Left upper quadrant",
+										"concept": "a8a047f8-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Right upper quadrant",
+										"concept": "a8a6760a-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Right lower quadrant",
+										"concept": "a8a03cf4-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Suprapubic",
+										"concept": "a8964122-1350-11df-a1f1-0026b9348838"
+									}
+								]
+							},
+							"validators": [],
+							"hide": {
+								"hideWhenExpression": "abdoExm !== 'a8a66e58-1350-11df-a1f1-0026b9348838'"
+							}
+						},
+						{
+							"label": "Urogenital exam:",
+							"id": "urogenExm",
+							"type": "obs",
+							"questionOptions": {
+								"concept": "a899f11e-1350-11df-a1f1-0026b9348838",
+								"rendering": "select",
+								"answers": [
+									{
+										"label": "Not done",
+										"concept": "a899ea48-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Normal",
+										"concept": "a899e7b4-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "FGM",
+										"concept": "a8b0f18e-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Genital sores",
+										"concept": "a8982b54-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Polyuria",
+										"concept": "068615a4-7fd2-40ea-b928-240cdec097ed"
+									},
+									{
+										"label": "Rapture of membranes",
+										"concept": "380b0af9-981c-4186-895d-020a209bcff2"
+									},
+									{
+										"label": "Signs of labor",
+										"concept": "a8b02164-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Signs of sexual abuse",
+										"concept": "a8a36082-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Vaginal bleeding",
+										"concept": "a89d145c-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Vaginal discharge",
+										"concept": "a8ad2eb4-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Warts, genital",
+										"concept": "a89cef0e-1350-11df-a1f1-0026b9348838"
+									}
+								]
+							}
+						},
+						{
+							"label": "Extremities exam:",
+							"id": "extrmExm",
+							"type": "obs",
+							"questionOptions": {
+								"concept": "a899f1e6-1350-11df-a1f1-0026b9348838",
+								"rendering": "select",
+								"answers": [
+									{
+										"label": "Not done",
+										"concept": "a899ea48-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Normal",
+										"concept": "a899e7b4-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Edema",
+										"concept": "a896537e-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Mass",
+										"concept": "a8964726-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Ulcers",
+										"concept": "be87ae99-9e94-4946-bee3-390a40bd8b23"
+									}
+								]
+							}
+						},
+						{
+							"label": "Testicular exam:",
+							"id": "TesticulaExam",
+							"type": "obs",
+							"questionOptions": {
+								"concept": "ab2723e2-e937-4f4c-8643-ef4a0c9ffa34",
+								"rendering": "select",
+								"answers": [
+									{
+										"label": "Not Done",
+										"concept": "a899ea48-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Normal",
+										"concept": "a899e7b4-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Abnormal",
+										"concept": "a899e890-1350-11df-a1f1-0026b9348838"
+									}
+								]
+							},
+							"validators": [],
+							"hide": {
+								"hideWhenExpression": "sex !== 'M'"
+							}
+						},
+						{
+							"label": "Specify testicular abnormalities:",
+							"type": "obs",
+							"id": "testabnorm",
+							"questionOptions": {
+								"concept": "a8a06fc6-1350-11df-a1f1-0026b9348838",
+								"rendering": "text"
+							},
+							"validators": [],
+							"hide": {
+								"hideWhenExpression": "TesticulaExam !== 'a899e890-1350-11df-a1f1-0026b9348838'"
+							}
+						},
+						{
+							"label": "Nodal survey exam:",
+							"id": "nodsvExm",
+							"type": "obs",
+							"questionOptions": {
+								"concept": "a899ecdc-1350-11df-a1f1-0026b9348838",
+								"rendering": "select",
+								"answers": [
+									{
+										"label": "Not done",
+										"concept": "a899ea48-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Normal",
+										"concept": "a899e7b4-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Lymphadenopathy",
+										"concept": "a893378e-1350-11df-a1f1-0026b9348838"
+									}
+								]
+							}
+						},
+						{
+							"label": "Lympadenopathy location:",
+							"id": "lympadLoc",
+							"type": "obs",
+							"questionOptions": {
+								"concept": "f14080b4-38b5-42c5-b196-e476627d6536",
+								"rendering": "multiCheckbox",
+								"answers": [
+									{
+										"label": "Axillary",
+										"concept": "a8a67a60-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Cervical",
+										"concept": "a89693e8-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Inguinal",
+										"concept": "a895703a-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Submandibular",
+										"concept": "a8956d1a-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Supraclavicular",
+										"concept": "a8956ef0-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Other",
+										"concept": "a8aaf3e2-1350-11df-a1f1-0026b9348838"
+									}
+								]
+							},
+							"validators": [],
+							"hide": {
+								"hideWhenExpression": "nodsvExm !== 'a893378e-1350-11df-a1f1-0026b9348838'"
+							}
+						},
+						{
+							"label": "Masses or skin lesions:",
+							"id": "skinLesion",
+							"type": "obs",
+							"questionOptions": {
+								"concept": "a899ec00-1350-11df-a1f1-0026b9348838",
+								"rendering": "select",
+								"answers": [
+									{
+										"label": "None",
+										"concept": "a899e0ac-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Normal",
+										"concept": "a899e7b4-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Abnormal",
+										"concept": "a899e890-1350-11df-a1f1-0026b9348838"
+									}
+								]
+							}
+						},
+						{
+							"type": "obsGroup",
+							"label": "Skin exam findings detailed",
+							"id": "skinFindings",
+							"questionOptions": {
+								"concept": "45d4eae5-3ffb-4c5f-b01b-a5f106f55f55",
+								"rendering": "repeating"
+							},
+							"questions": [
+								{
+									"label": "Body part:",
+									"id": "bodyPart",
+									"type": "obs",
+									"questionOptions": {
+										"concept": "955d1412-829a-4bc8-beb0-e23c5075b07c",
+										"rendering": "select",
+										"answers": [
+											{
+												"label": "Abdomen",
+												"concept": "a89c6700-1350-11df-a1f1-0026b9348838"
+											},
+											{
+												"label": "Back",
+												"concept": "9a78590e-db0f-4e24-9791-15819e225535"
+											},
+											{
+												"label": "Buttocks",
+												"concept": "6edd8ee8-f097-4038-8b39-9fd1389abe6e"
+											},
+											{
+												"label": "Face",
+												"concept": "71c328a8-f615-4fe3-906b-95994f144ad0"
+											},
+											{
+												"label": "Genitals",
+												"concept": "20c2a323-fbab-439d-b36a-e7e646ad3b68"
+											},
+											{
+												"label": "Lower extremities",
+												"concept": "a89b555e-1350-11df-a1f1-0026b9348838"
+											},
+											{
+												"label": "Neck",
+												"concept": "c89840e1-cc91-492d-8ae8-67de9dd67abb"
+											},
+											{
+												"label": "Upper extremities",
+												"concept": "a89b5702-1350-11df-a1f1-0026b9348838"
+											}
+										]
+									},
+									"validators": [],
+									"hide": {
+										"hideWhenExpression": "skinLesion !== 'a899e890-1350-11df-a1f1-0026b9348838'"
+									}
+								},
+								{
+									"label": "Laterality:",
+									"id": "laterality",
+									"type": "obs",
+									"questionOptions": {
+										"concept": "6dfef7ac-10eb-4acb-886a-df040ffdc956",
+										"rendering": "select",
+										"answers": [
+											{
+												"label": "Bilateral",
+												"concept": "a8a4b04a-1350-11df-a1f1-0026b9348838"
+											},
+											{
+												"label": "Left",
+												"concept": "a8a69234-1350-11df-a1f1-0026b9348838"
+											},
+											{
+												"label": "Right",
+												"concept": "a8a69554-1350-11df-a1f1-0026b9348838"
+											}
+										]
+									},
+									"validators": [],
+									"hide": {
+										"hideWhenExpression": "skinLesion !== 'a899e890-1350-11df-a1f1-0026b9348838'"
+									}
+								},
+								{
+									"label": "Mass measurement in cm first direction:",
+									"id": "massFirstDirec",
+									"type": "obs",
+									"questionOptions": {
+										"concept": "4e154b0e-5f8e-4e2a-8267-e4d6931d7f9e",
+										"rendering": "number",
+										"min": "0"
+									},
+									"validators": [],
+									"hide": {
+										"hideWhenExpression": "skinLesion !== 'a899e890-1350-11df-a1f1-0026b9348838'"
+									}
+								},
+								{
+									"label": "Mass measurement in cm second direction:",
+									"id": "massSecDirec",
+									"type": "obs",
+									"questionOptions": {
+										"concept": "4bf75367-afc7-47c2-a11e-d1d5776fd018",
+										"rendering": "number",
+										"min": "0"
+									},
+									"validators": [],
+									"hide": {
+										"hideWhenExpression": "skinLesion !== 'a899e890-1350-11df-a1f1-0026b9348838'"
+									}
+								}
+							]
+						},
+						{
+							"label": "Musculoskeletal exam:",
+							"id": "muscoskel",
+							"type": "obs",
+							"questionOptions": {
+								"concept": "a899f2ae-1350-11df-a1f1-0026b9348838",
+								"rendering": "select",
+								"answers": [
+									{
+										"label": "Not done",
+										"concept": "a899ea48-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Normal",
+										"concept": "a899e7b4-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Abnormal",
+										"concept": "a899e890-1350-11df-a1f1-0026b9348838"
+									}
+								]
+							}
+						},
+						{
+							"type": "obsGroup",
+							"label": "Neurologic exam findings detailed",
+							"id": "neurologic",
+							"questionOptions": {
+								"concept": "664d0c4f-50b6-470e-a76f-6a434024882c",
+								"rendering": "group"
+							},
+							"questions": [
+								{
+									"label": "Neurologic exam:",
+									"id": "neuExam",
+									"type": "obs",
+									"questionOptions": {
+										"concept": "a899f380-1350-11df-a1f1-0026b9348838",
+										"rendering": "select",
+										"answers": [
+											{
+												"label": "Not done",
+												"concept": "a899ea48-1350-11df-a1f1-0026b9348838"
+											},
+											{
+												"label": "Normal",
+												"concept": "a899e7b4-1350-11df-a1f1-0026b9348838"
+											},
+											{
+												"label": "Abnormal gait",
+												"concept": "a8a676fa-1350-11df-a1f1-0026b9348838"
+											},
+											{
+												"label": "Cranial nerve abnormality",
+												"concept": "a8965b30-1350-11df-a1f1-0026b9348838"
+											},
+											{
+												"label": "Focal weakness",
+												"concept": "a8ad3a26-1350-11df-a1f1-0026b9348838"
+											},
+											{
+												"label": "Decreased sensation",
+												"concept": "a89565ea-1350-11df-a1f1-0026b9348838"
+											}
+										]
+									}
+								},
+								{
+									"label": "Specify cranial abnormalities:",
+									"type": "obs",
+									"questionOptions": {
+										"concept": "a8a06fc6-1350-11df-a1f1-0026b9348838",
+										"rendering": "text"
+									},
+									"validators": [],
+									"hide": {
+										"hideWhenExpression": "neuExam !== 'a8965b30-1350-11df-a1f1-0026b9348838'"
+									}
+								},
+								{
+									"label": "Condition causing focal weakness:",
+									"id": "condFweak",
+									"type": "obs",
+									"questionOptions": {
+										"concept": "16dadb47-eefe-4e63-8668-f89bc2e29ea1",
+										"rendering": "select",
+										"answers": [
+											{
+												"label": "Left Hemiparesis ",
+												"concept": "7c22aaae-4fe4-4d56-ae6b-3da4c20bd4d1"
+											},
+											{
+												"label": "Right Hemiparesis",
+												"concept": "a4741a4d-8e6f-4009-921b-67f86c1b5506"
+											},
+											{
+												"label": "Paraplegia",
+												"concept": "e164d4ff-dee7-4cda-8aa0-d74175870768"
+											}
+										]
+									},
+									"validators": [],
+									"hide": {
+										"hideWhenExpression": "neuExam !== 'a8ad3a26-1350-11df-a1f1-0026b9348838'"
+									}
+								}
+							]
+						},
+						{
+							"label": "Physical examination notes:",
+							"type": "obs",
+							"id": "physicalNotes",
+							"required": "false",
+							"default": "",
+							"questionOptions": {
+								"concept": "a8a0cc32-1350-11df-a1f1-0026b9348838",
+								"rendering": "textarea",
+								"placeholder": "Indicate here notes related to physical examination",
+								"rows": 18
+							}
+						}
+					]
+				},
+				{
+					"label": "Physical Therapy",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"type": "obsGroup",
+							"label": "Physical therapy",
+							"id": "physicalTherapy",
+							"questionOptions": {
+								"concept": "a4ddf80b-ac77-4296-bbfb-8eeb17345d5e",
+								"rendering": "repeating"
+							},
+							"questions": [
+								{
+									"label": "Areas of concern:",
+									"id": "concernArea",
+									"type": "obs",
+									"questionOptions": {
+										"concept": "bde70ae0-09ce-41c1-8804-15b229d17ad3",
+										"rendering": "select",
+										"answers": [
+											{
+												"label": "Ankle",
+												"concept": "382e4649-fd36-4473-9444-bd4c5460718a"
+											},
+											{
+												"label": "Biceps Brachii",
+												"concept": "a89c6318-1350-11df-a1f1-0026b9348838"
+											},
+											{
+												"label": "Calf (Gastrocnemius)",
+												"concept": "a89c64a8-1350-11df-a1f1-0026b9348838"
+											},
+											{
+												"label": "Elbow",
+												"concept": "6d37fcfc-ac09-4bcb-bbc2-22223e42849b"
+											},
+											{
+												"label": "Fingers",
+												"concept": "62dd1646-0bfd-4c4e-a015-400c449d78c7"
+											},
+											{
+												"label": "Hamstring",
+												"concept": "4bb28321-9cb1-40b2-ab8a-b827edcbaa4f"
+											},
+											{
+												"label": "Hip",
+												"concept": "be62abdc-afd5-4198-a880-6261dcea5fe8"
+											},
+											{
+												"label": "Hip extensors",
+												"concept": "f7478c8b-fb33-47b7-beb7-4a07b5fe88d0"
+											},
+											{
+												"label": "Hip Flexor (Iliopsoas)",
+												"concept": "dad90397-999e-4a02-9f71-3f9847784da7"
+											},
+											{
+												"label": "Knee",
+												"concept": "42e973bc-7106-431b-82ea-7027d0438982"
+											},
+											{
+												"label": "Shoulder",
+												"concept": "776aec59-2055-4291-8db4-a1711084816e"
+											},
+											{
+												"label": "Thigh (quadriiceps)",
+												"concept": "a89c6570-1350-11df-a1f1-0026b9348838"
+											},
+											{
+												"label": "Wrist",
+												"concept": "2896afbb-ecd8-45eb-b0ca-6853eced0008"
+											},
+											{
+												"label": "Other",
+												"concept": "a8aaf3e2-1350-11df-a1f1-0026b9348838"
+											}
+										]
+									},
+									"validators": []
+								},
+								{
+									"label": "Other area of concern:",
+									"type": "obs",
+									"questionOptions": {
+										"concept": "a8a06fc6-1350-11df-a1f1-0026b9348838",
+										"rendering": "text"
+									},
+									"validators": [],
+									"hide": {
+										"hideWhenExpression": "concernArea !== 'a8aaf3e2-1350-11df-a1f1-0026b9348838'"
+									}
+								},
+								{
+									"label": "Laterality:",
+									"id": "lateral",
+									"type": "obs",
+									"questionOptions": {
+										"concept": "6dfef7ac-10eb-4acb-886a-df040ffdc956",
+										"rendering": "select",
+										"answers": [
+											{
+												"label": "Bilateral",
+												"concept": "a8a4b04a-1350-11df-a1f1-0026b9348838"
+											},
+											{
+												"label": "Left",
+												"concept": "a8a69234-1350-11df-a1f1-0026b9348838"
+											},
+											{
+												"label": "Right",
+												"concept": "a8a69554-1350-11df-a1f1-0026b9348838"
+											}
+										]
+									},
+									"validators": [],
+									"hide": {
+										"hideWhenExpression": "isEmpty(concernArea)"
+									}
+								}
+							]
+						},
+						{
+							"label": "Physical activity level plan:",
+							"id": "activityLevel",
+							"type": "obs",
+							"questionOptions": {
+								"concept": "f977347e-f571-44f9-a88f-c5fe62c1d631",
+								"rendering": "select",
+								"answers": [
+									{
+										"label": "Assistance required (Patient needs a wheelchair or help form others to move around)",
+										"concept": "749eab1a-fbd7-4101-9dad-b364122e61fd"
+									},
+									{
+										"label": "Some limitation (Patient has independent mobility but some restriction due to joint disease)",
+										"concept": "5bac0824-2814-480b-b914-15aca4da7845"
+									},
+									{
+										"label": "Unrestricted (patient has few or no signs of joint disease)",
+										"concept": "2f8c320f-dc15-4dca-b784-593dd623d6bf"
+									},
+									{
+										"label": "Very limited (Patient can move around independently but with difficulty)",
+										"concept": "9046158d-a33e-4967-b467-026c08319941"
+									}
+								]
+							},
+							"validators": []
+						},
+						{
+							"label": "Recomendations made on assistance devices:",
+							"id": "assistanceDevice",
+							"type": "obs",
+							"questionOptions": {
+								"concept": "a89ed74c-1350-11df-a1f1-0026b9348838",
+								"rendering": "multiCheckbox",
+								"answers": [
+									{
+										"label": "None",
+										"concept": "a899e0ac-1350-11df-a1f1-0026b9348838"
+									},
+									{
+										"label": "Ankle support",
+										"concept": "70ed9d95-a44b-4c8e-92e3-876f523653ab"
+									},
+									{
+										"label": "Elbow support",
+										"concept": "6a7c7c73-3727-4e21-8af8-2ca45dbd6430"
+									},
+									{
+										"label": "Back support",
+										"concept": "36455bf3-4231-4f56-aced-42e7bacf9164"
+									},
+									{
+										"label": "Cane",
+										"concept": "f61a4880-c932-4d60-9124-1e6af81e6601"
+									},
+									{
+										"label": "Chest support",
+										"concept": "43da3c64-d951-4a87-83ce-44b9132db945"
+									},
+									{
+										"label": "Crutches",
+										"concept": "1619a8f1-be83-407c-853a-267a871edc2d"
+									},
+									{
+										"label": "Foot support",
+										"concept": "d744bad6-a664-4a97-832f-6877bca5af5c"
+									},
+									{
+										"label": "Hand support",
+										"concept": "e481b4f5-8cc2-4892-b23f-1f2e83640b35"
+									},
+									{
+										"label": "Knee support",
+										"concept": "b2b82611-b725-4553-8938-a0f883c63ccd"
+									},
+									{
+										"label": "Neck support",
+										"concept": "bd5bdc5c-25c0-4c72-b044-f6ef3c737f54"
+									},
+									{
+										"label": "Shoulder support",
+										"concept": "91dcca3b-626b-4bca-b555-654678557a46"
+									},
+									{
+										"label": "Thigh support",
+										"concept": "ac927060-947f-46db-8304-edacb0a24265"
+									},
+									{
+										"label": "Walker",
+										"concept": "c01a0ed3-3739-4d05-b4b4-571aa29e04f7"
+									},
+									{
+										"label": "Wheelchair",
+										"concept": "84c0f884-f222-4673-9a59-c08b3534170e"
+									},
+									{
+										"label": "Wrist support",
+										"concept": "33e384a4-cb64-45f3-8be4-a23de630ffee"
+									}
+								]
+							},
+							"validators": [],
+							"hide": {
+								"hideWhenExpression": "activityLevel !== '749eab1a-fbd7-4101-9dad-b364122e61fd'"
+							}
+						},
+						{
+							"label": "Therapeutic notes:",
+							"type": "obs",
+							"id": "therapeuticNotes",
+							"required": "false",
+							"default": "",
+							"questionOptions": {
+								"concept": "23f710cc-7f9c-4255-9b6b-c3e240215dba",
+								"rendering": "textarea",
+								"rows": 8
+							}
+						}
+					]
+				},
+				{
+					"label": "Presentations",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"type": "obsGroup",
+							"label": "Chief complaints detailed",
+							"id": "chestComplains",
+							"questionOptions": {
+								"concept": "9014962e-3efe-46b0-a393-c8c8bddadaa7",
+								"rendering": "repeating"
+							},
+							"questions": [
+								{
+									"label": "Chief complaint:",
+									"id": "chiefComplain",
+									"type": "obs",
+									"historicalExpression": "_.isEmpty(HD.getObject('prevEnc').getValue('a8a6ddb6-1350-11df-a1f1-0026b9348838')) ? undefined : HD.getObject('prevEnc').getValue('a8a6ddb6-1350-11df-a1f1-0026b9348838')",
+									"questionOptions": {
+										"concept": "a8a6ddb6-1350-11df-a1f1-0026b9348838",
+										"rendering": "select",
+										"answers": [
+											{
+												"label": "Back pain",
+												"concept": "a8953d90-1350-11df-a1f1-0026b9348838"
+											},
+											{
+												"label": "Bloody Sputum",
+												"concept": "d7dab0c1-9d50-460e-88a5-614170f200cd"
+											},
+											{
+												"label": "Chest pains",
+												"concept": "a892e4b4-1350-11df-a1f1-0026b9348838"
+											},
+											{
+												"label": "Difficulty in breathing",
+												"concept": "9e7baa95-f4a4-45f1-b5d9-8cccfb2bd5f6"
+											},
+											{
+												"label": "Shortness of Breath/wheezing",
+												"concept": "a8ad1276-1350-11df-a1f1-0026b9348838"
+											},
+											{
+												"label": "Unexplained Cough",
+												"concept": "a890d73c-1350-11df-a1f1-0026b9348838"
+											},
+											{
+												"label": "Unexplained Weight Loss",
+												"concept": "a89807f0-1350-11df-a1f1-0026b9348838"
+											},
+											{
+												"label": "Other",
+												"concept": "a8aaf3e2-1350-11df-a1f1-0026b9348838"
+											}
+										]
+									}
+								},
+								{
+									"label": "Specify other complaints:",
+									"type": "obs",
+									"id": "otherComplaints",
+									"historicalExpression": "_.isEmpty(HD.getObject('prevEnc').getValue('a8a06fc6-1350-11df-a1f1-0026b9348838')) ? undefined : HD.getObject('prevEnc').getValue('a8a06fc6-1350-11df-a1f1-0026b9348838')",
+									"questionOptions": {
+										"concept": "a8a06fc6-1350-11df-a1f1-0026b9348838",
+										"rendering": "text"
+									},
+									"validators": [],
+									"hide": {
+										"hideWhenExpression": "chiefComplain !=='a8aaf3e2-1350-11df-a1f1-0026b9348838'"
+									}
+								},
+								{
+									"label": "Complain duration:",
+									"id": "complainDuration",
+									"type": "obs",
+									"questionOptions": {
+										"concept": "5e5b7ff2-f0e7-44a2-ac11-ab3d140bf925",
+										"rendering": "select",
+										"answers": [
+											{
+												"label": "Days",
+												"concept": "a899b9c4-1350-11df-a1f1-0026b9348838"
+											},
+											{
+												"label": "Weeks",
+												"concept": "a899baaa-1350-11df-a1f1-0026b9348838"
+											},
+											{
+												"label": "Months",
+												"concept": "a899bb90-1350-11df-a1f1-0026b9348838"
+											},
+											{
+												"label": "Years",
+												"concept": "ac6a274b-a494-486d-83c1-4abab7e4442c"
+											}
+										]
+									},
+									"validators": [],
+									"hide": {
+										"hideWhenExpression": "isEmpty(chiefComplain)"
+									}
+								},
+								{
+									"label": "Number of days:",
+									"id": "numberDays",
+									"type": "obs",
+									"questionOptions": {
+										"concept": "a8a05e82-1350-11df-a1f1-0026b9348838",
+										"rendering": "number",
+										"max": "365",
+										"min": "0"
+									},
+									"validators": [],
+									"hide": {
+										"hideWhenExpression": "complainDuration !== 'a899b9c4-1350-11df-a1f1-0026b9348838'"
+									}
+								},
+								{
+									"label": "Number of weeks:",
+									"id": "numberWeeks",
+									"type": "obs",
+									"questionOptions": {
+										"concept": "a8a05f4a-1350-11df-a1f1-0026b9348838",
+										"rendering": "number",
+										"max": "52",
+										"min": "0"
+									},
+									"validators": [],
+									"hide": {
+										"hideWhenExpression": "complainDuration !== 'a899baaa-1350-11df-a1f1-0026b9348838'"
+									}
+								},
+								{
+									"label": "Number of months:",
+									"id": "numberMonths",
+									"type": "obs",
+									"questionOptions": {
+										"concept": "a8a06008-1350-11df-a1f1-0026b9348838",
+										"rendering": "number",
+										"max": "12",
+										"min": "0"
+									},
+									"validators": [],
+									"hide": {
+										"hideWhenExpression": "complainDuration !== 'a899bb90-1350-11df-a1f1-0026b9348838'"
+									}
+								},
+								{
+									"label": "Number of years:",
+									"id": "numberYears",
+									"type": "obs",
+									"questionOptions": {
+										"concept": "1b5d33b9-9e7c-4cfb-97bd-c0bcf5e03120",
+										"rendering": "number",
+										"max": "50",
+										"min": "0"
+									},
+									"validators": [],
+									"hide": {
+										"hideWhenExpression": "complainDuration !== 'ac6a274b-a494-486d-83c1-4abab7e4442c'"
+									}
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}
