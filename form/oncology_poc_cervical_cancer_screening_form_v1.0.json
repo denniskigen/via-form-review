@@ -70,7 +70,35 @@
     },
     {
       "label": "Treatment Plan",
-      "sections": []
+      "sections": [
+        {
+          "label": "Pre-Cancer Treatment",
+          "isExpanded": "true",
+          "questions": [
+            {
+              "label": "What Pre-Cancer Treatment has been given to the patient?",
+              "questionOptions": {
+                "concept": "a899edcc-1350-11df-a1f1-0026b9348838",
+                "rendering": "select",
+                "answers": [
+                  {
+                    "concept": "",
+                    "label": "Cryotherapy"
+                  },
+                  {
+                    "concept": "",
+                    "label": "Thermocoagulation"
+                  },
+                  {
+                    "concept": "",
+                    "label": "LEEP"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "label": "Follow-up Plan",
