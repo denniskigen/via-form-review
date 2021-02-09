@@ -4,6 +4,141 @@
   "uuid": "xxxx",
   "referencedForms": [],
   "pages": [
-    {}
+    {
+      "label": "Encounter Details",
+      "isExpanded": "true",
+      "questions": [
+        {
+          "type": "encounterDatetime",
+          "label": "Visit date",
+          "required": "true",
+          "default": "",
+          "id": "encDate",
+          "questionOptions": {
+            "rendering": "date"
+          },
+          "validators": [
+            {
+              "type": "date"
+            }
+          ]
+        },
+        {
+          "type": "encounterProvider",
+          "label": "Provider",
+          "id": "provider",
+          "required": "true",
+          "default": "",
+          "questionOptions": {
+            "rendering": "ui-select-extended"
+          }
+        },
+        {
+          "type": "encounterLocation",
+          "label": "Facility name (site/satellite clinic required)",
+          "id": "location",
+          "required": "true",
+          "questionOptions": {
+            "rendering": "ui-select-extended"
+          }
+        }
+      ]
+    },
+    {
+      "label": "Pre-Clinical Review",
+      "sections": []
+    },
+    {
+      "label": "Reproductive Health",
+      "sections": []
+    },
+    {
+      "label": "HIV Status",
+      "sections": []
+    },
+    {
+      "label": "Prior VIA",
+      "sections": []
+    },
+    {
+      "label": "Routine Screening",
+      "sections": []
+    },
+    {
+      "label": "Procedure Done",
+      "sections": []
+    },
+    {
+      "label": "Treatment Plan",
+      "sections": []
+    },
+    {
+      "label": "Follow-up Plan",
+      "sections": []
+    },
+    {
+      "label": "Assessment",
+      "sections": [
+        {
+          "label": "Assessment Notes",
+          "isExpanded": "true",
+          "questions": [
+            {
+              "label": "Please enter your assessment below:",
+              "type": "obs",
+              "id": "assNote",
+              "required": "false",
+              "default": "",
+              "questionOptions": {
+                "concept": "23f710cc-7f9c-4255-9b6b-c3e240215dba",
+                "rendering": "textarea",
+                "rows": 20
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Next Appointment",
+      "sections": [
+        {
+          "label": "Next Appointment",
+          "isExpanded": "true",
+          "questions": [
+            {
+              "label": "Return to clinic date:",
+              "type": "obs",
+              "required": "true",
+              "questionOptions": {
+                "concept": "a8a666ba-1350-11df-a1f1-0026b9348838",
+                "rendering": "date",
+                "weeksList": [
+                  2,
+                  4,
+                  9,
+                  13,
+                  26,
+                  52,
+                  104,
+                  156
+                ]
+              },
+              "validators": [
+                {
+                  "type": "date",
+                  "allowFutureDates": "true"
+                },
+                {
+                  "type": "js_expression",
+                  "failsWhenExpression": "(new moment(encDate)).isAfter((new moment(myValue)), 'day') || (new moment(encDate)).isSame((new moment(myValue)), 'day')",
+                  "message": "Return to clinic date should be greater than the encounter date."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
   ]
 }
