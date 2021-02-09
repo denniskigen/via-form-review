@@ -1,0 +1,305 @@
+{
+	"name": "component_oncology-preclinic-review-v1.2",
+	"uuid": "xxxx",
+	"processor": "EncounterFormProcessor",
+	"pages": [
+		{
+			"label": "Pre-clinic Review",
+			"sections": [
+				{
+					"label": "Pre-Clinic Review",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "Current visit",
+							"id": "visitType",
+							"required": "true",
+							"questionOptions": {
+								"rendering": "select",
+								"concept": "a89ff9a6-1350-11df-a1f1-0026b9348838",
+								"answers": [
+									{
+										"concept": "a89b6440-1350-11df-a1f1-0026b9348838",
+										"label": "Scheduled visit"
+									},
+									{
+										"concept": "a89ff816-1350-11df-a1f1-0026b9348838",
+										"label": "Unscheduled visit early"
+									},
+									{
+										"concept": "a89ff8de-1350-11df-a1f1-0026b9348838",
+										"label": "Unscheduled visit late"
+									}
+								]
+							},
+							"type": "obs",
+							"validators": []
+						},
+						{
+							"label": "If early or late unscheduled visit, what was the scheduled visit date?",
+							"id": "actualDate",
+							"type": "obs",
+							"required": {
+								"type": "conditionalRequired",
+								"referenceQuestionId": "visitType",
+								"referenceQuestionAnswers": [
+									"a89ff816-1350-11df-a1f1-0026b9348838",
+									"a89ff8de-1350-11df-a1f1-0026b9348838"
+								]
+							},
+							"questionOptions": {
+								"rendering": "date",
+								"concept": "dc1942b2-5e50-4adc-949d-ad6c905f054e"
+							},
+							"validators": [
+								{
+									"type": "date",
+									"allowFutureDates": "true"
+								},
+								{
+									"type": "js_expression",
+									"failsWhenExpression": "!isEmpty(visitType) && arrayContains(['a89ff816-1350-11df-a1f1-0026b9348838','a89ff8de-1350-11df-a1f1-0026b9348838'], visitType) && isEmpty(myValue)",
+									"message": "Patient visit marked as unscheduled. Please provide the scheduled date."
+								}
+							],
+							"hide": {
+								"hideWhenExpression": "!arrayContains(['a89ff816-1350-11df-a1f1-0026b9348838','a89ff8de-1350-11df-a1f1-0026b9348838'], visitType)"
+							}
+						},
+						{
+							"label": "Visit type",
+							"id": "typeOfVisit",
+							"required": "true",
+							"questionOptions": {
+								"rendering": "select",
+								"concept": "a89ff9a6-1350-11df-a1f1-0026b9348838",
+								"answers": [
+									{
+										"concept": "",
+										"label": "Initial screening"
+									},
+									{
+										"concept": "",
+										"label": "Routine screening"
+									},
+									{
+										"concept": "",
+										"label": "Post-Treatment screening"
+									},
+									{
+										"concept": "",
+										"label": "Treatment visit"
+									},
+									{
+										"concept": "",
+										"label": "Post-Treatment"
+									},
+									{
+										"concept": "",
+										"label": "Complications"
+									}
+								]
+							},
+							"type": "obs",
+							"validators": []
+						}
+					]
+				},
+				{
+					"label": "Purpose of Visit",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"type": "obsGroup",
+							"label": "Reasons for current visit, detailed",
+							"id": "visitdetailed",
+							"questionOptions": {
+								"concept": "6e78c98e-554d-498e-b8da-b6bf5a6532bb",
+								"rendering": "group"
+							},
+							"questions": [
+								{
+									"label": "Purpose of visit",
+									"id": "purpvist",
+									"questionOptions": {
+										"rendering": "select",
+										"concept": "a89ff5c8-1350-11df-a1f1-0026b9348838",
+										"answers": [
+											{
+												"concept": "5d0f859f-b08a-4bea-8ab3-4d108cb72d69",
+												"label": "Annual screening"
+											},
+											{
+												"concept": "a89ac184-1350-11df-a1f1-0026b9348838",
+												"label": "New complaints"
+											},
+											{
+												"concept": "a89b6440-1350-11df-a1f1-0026b9348838",
+												"label": "Recall/scheduled visit"
+											},
+											{
+												"concept": "a8a4812e-1350-11df-a1f1-0026b9348838",
+												"label": "Follow up"
+											},
+											{
+												"concept": "a8aaf3e2-1350-11df-a1f1-0026b9348838",
+												"label": "Other"
+											}
+										]
+									},
+									"type": "obs",
+									"validators": []
+								},
+								{
+									"label": "Please specify any other purpose of this visit that is not listed above",
+									"type": "obs",
+									"questionOptions": {
+										"concept": "a8a06fc6-1350-11df-a1f1-0026b9348838",
+										"rendering": "text"
+									},
+									"validators": [],
+									"hide": {
+										"hideWhenExpression": "purpvist !== 'a8aaf3e2-1350-11df-a1f1-0026b9348838'"
+									}
+								},
+								{
+									"label": "What complaints are you presenting with?",
+									"id": "complaintsPresentingWith",
+									"type": "obs",
+									"questionOptions": {
+										"rendering": "multiCheckbox",
+										"concept": "a8a6ddb6-1350-11df-a1f1-0026b9348838",
+										"answers": [
+											{
+												"concept": "5c5e5e89-8e4d-451d-9471-fbe359d40b00",
+												"label": "Axillary swelling"
+											},
+											{
+												"concept": "a8964726-1350-11df-a1f1-0026b9348838",
+												"label": "Breast mass"
+											},
+											{
+												"concept": "c7356bfe-e9a8-422b-9a6a-6e42490d308e",
+												"label": "Breast pain"
+											},
+											{
+												"concept": "a895776a-1350-11df-a1f1-0026b9348838",
+												"label": "Breast rash"
+											},
+											{
+												"concept": "4dd41494-15c7-4d93-88c1-1dab8c7bc2c7",
+												"label": "Nipple discharge"
+											},
+											{
+												"concept": "a8aaf3e2-1350-11df-a1f1-0026b9348838",
+												"label": "Other (non-coded)"
+											}
+										]
+									},
+									"validators": [],
+									"hide": {
+										"hideWhenExpression": "purpvist !== 'a89ac184-1350-11df-a1f1-0026b9348838'"
+									}
+								},
+								{
+									"label": "What other complaints are you presenting with that are not listed above?",
+									"id": "otherComplaints",
+									"type": "obs",
+									"questionOptions": {
+										"concept": "a8a06fc6-1350-11df-a1f1-0026b9348838",
+										"rendering": "text"
+									},
+									"validators": [],
+									"hide": {
+										"hideWhenExpression": "purpvist !== 'a89ac184-1350-11df-a1f1-0026b9348838' || isEmpty(complaintsPresentingWith) || !arrayContains(complaintsPresentingWith, 'a8aaf3e2-1350-11df-a1f1-0026b9348838')"
+									}
+								}
+							]
+						}
+					]
+				},
+				{
+					"label": "Reasons For Current Visit",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "Purpose of visit:",
+							"id": "purpvists",
+							"required": "true",
+							"questionOptions": {
+								"rendering": "select",
+								"concept": "a89ff5c8-1350-11df-a1f1-0026b9348838",
+								"answers": [
+									{
+										"concept": "ab202fa8-ad2b-487d-83f8-991f8fa109a1",
+										"label": "Initial visit"
+									},
+									{
+										"concept": "9593a728-ff99-41ad-9d87-db3d083daa90",
+										"label": "Second opinion"
+									}
+								]
+							},
+							"type": "obs",
+							"validators": []
+						},
+						{
+							"label": "What insurance do you have?",
+							"id": "insuType",
+							"required": "true",
+							"questionOptions": {
+								"rendering": "select",
+								"concept": "a8b02524-1350-11df-a1f1-0026b9348838",
+								"answers": [
+									{
+										"concept": "a899e0ac-1350-11df-a1f1-0026b9348838",
+										"label": "None"
+									},
+									{
+										"concept": "8b715fed-97f6-4e38-8f6a-c167a42f8923",
+										"label": "NHIF"
+									},
+									{
+										"concept": "0bfb0150-949b-4625-98b8-b9d8275bcf44",
+										"label": "Employer based insurance"
+									},
+									{
+										"concept": "6fac74c3-fe25-4170-92a4-3ecb8859152e",
+										"label": "Private insurance"
+									},
+									{
+										"concept": "a8aaf3e2-1350-11df-a1f1-0026b9348838",
+										"label": "Other"
+									}
+								]
+							},
+							"type": "obs",
+							"validators": []
+						},
+						{
+							"label": "Do you have a family member or caregiver who assists you with taking care of your health needs?",
+							"id": "caregiver",
+							"required": "true",
+							"questionOptions": {
+								"rendering": "select",
+								"concept": "25d3dc5a-5ea6-4361-8929-bf1b57826712",
+								"answers": [
+									{
+										"concept": "a899b35c-1350-11df-a1f1-0026b9348838",
+										"label": "Yes"
+									},
+									{
+										"concept": "a899b42e-1350-11df-a1f1-0026b9348838",
+										"label": "No"
+									}
+								]
+							},
+							"type": "obs",
+							"validators": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
