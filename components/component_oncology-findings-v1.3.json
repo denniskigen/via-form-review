@@ -1,0 +1,860 @@
+{
+  "name": "component_oncology-findings-v1.3",
+  "uuid": "xxxx",
+  "processor": "EncounterFormProcessor",
+  "pages": [
+    {
+      "label": "Findings",
+      "sections": [
+        {
+          "label": "Satisfactory Colposcopy Test",
+          "isExpanded": "true",
+          "questions": [
+            {
+              "label": "Satisfactory colposcopy",
+              "type": "obs",
+              "id": "colpostest",
+              "questionOptions": {
+                "concept": "e7527258-1bf7-4e9f-8334-6ddb2cc03930",
+                "rendering": "select",
+                "answers": [
+                  {
+                    "concept": "a899b35c-1350-11df-a1f1-0026b9348838",
+                    "label": "Yes"
+                  },
+                  {
+                    "concept": "a899b42e-1350-11df-a1f1-0026b9348838",
+                    "label": "No, entire SCJ not seen"
+                  },
+                  {
+                    "concept": "a899ea48-1350-11df-a1f1-0026b9348838",
+                    "label": "Not done today"
+                  }
+                ]
+              },
+              "validators": []
+            },
+            {
+              "label": "Colposcopy findings",
+              "type": "obs",
+              "id": "colpofinding",
+              "questionOptions": {
+                "concept": "44ffeaba-ffeb-4aa5-a141-3f144b75d3cb",
+                "rendering": "multiCheckbox",
+                "answers": [
+                  {
+                    "concept": "a899e7b4-1350-11df-a1f1-0026b9348838",
+                    "label": "Normal"
+                  },
+                  {
+                    "concept": "0dc3cb9a-67f0-4883-a681-c077641d9467",
+                    "label": "Acetowhite"
+                  },
+                  {
+                    "concept": "8ad0d103-9b93-4896-87bc-1bb77455f622",
+                    "label": "Internal borders (variegated)"
+                  },
+                  {
+                    "concept": "779e7248-301f-43c2-a24e-87d1cb13abfb",
+                    "label": "Punctuation"
+                  },
+                  {
+                    "concept": "234a987b-c24f-45ed-a01f-4bb33a95d22e",
+                    "label": "Mosaicism"
+                  },
+                  {
+                    "concept": "2e293b85-4915-48fe-ac36-5448ff0ffa3f",
+                    "label": "Atypical vessels"
+                  }
+                ]
+              },
+              "validators": [],
+              "hide": {
+                "hideWhenExpression": "colpostest !== 'a899b35c-1350-11df-a1f1-0026b9348838'"
+              }
+            },
+            {
+              "label": "Size of cervical lesion",
+              "type": "obs",
+              "id": "sizelesion",
+              "questionOptions": {
+                "concept": "125ba992-800d-4f37-8b5d-44178f2dc80f",
+                "rendering": "select",
+                "answers": [
+                  {
+                    "concept": "e02b05fa-59cd-4f29-9253-160cfafd325a",
+                    "label": "Larger than 50 percent of cervix"
+                  },
+                  {
+                    "concept": "901a28fa-f19a-4b11-ad80-9cc5ffba36de",
+                    "label": "Smaller than 50 percent of cervix"
+                  },
+                  {
+                    "concept": "ebb0aaa9-9b8e-4139-9d91-43291cad6e63",
+                    "label": "Large transformation zone more than 50 percent of cervix"
+                  },
+                  {
+                    "concept": "a44c10f0-f545-4eec-99b5-4dbe4e6665ad",
+                    "label": "Lesion extends into canal"
+                  }
+                ]
+              },
+              "validators": [],
+              "hide": {
+                "hideWhenExpression": "isEmpty(colpostest) || colpostest !== 'a899b35c-1350-11df-a1f1-0026b9348838' "
+              }
+            }
+          ]
+        },
+        {
+          "label": "Pap Smear Test",
+          "isExpanded": "true",
+          "questions": [
+            {
+              "label": "Pap smear result on this visit",
+              "id": "currentPapSmear",
+              "questionOptions": {
+                "concept": "",
+                "rendering": "multiCheckbox",
+                "answers": [
+                  {
+                    "concept": "",
+                    "label": "Normal"
+                  },
+                  {
+                    "concept": "",
+                    "label": "ASCUS/ASC-H"
+                  },
+                  {
+                    "concept": "",
+                    "label": "LSIL"
+                  },
+                  {
+                    "concept": "",
+                    "label": "HSIL/CIS"
+                  },
+                  {
+                    "concept": "",
+                    "label": "AGUS"
+                  },
+                  {
+                    "concept": "",
+                    "label": "Invasive Cancer"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "label": "HPV Test",
+          "isExpanded": "true",
+          "questions": [
+            {
+              "label": "HPV result on this visit",
+              "id": "currentHpv",
+              "questionOptions": {
+                "concept": "",
+                "rendering": "select",
+                "answers": [
+                  {
+                    "concept": "",
+                    "label": "Negative"
+                  },
+                  {
+                    "concept": "",
+                    "label": "Positive"
+                  },
+                  {
+                    "concept": "",
+                    "label": "Indeterminate"
+                  }
+                ]
+              }
+            },
+            {
+              "label": "HPV type",
+              "id": "hpvType",
+              "questionOptions": {
+                "concept": "",
+                "rendering": "select",
+                "answers": [
+                  {
+                    "concept": "",
+                    "label": "HPV-16"
+                  },
+                  {
+                    "concept": "",
+                    "label": "HPV-18"
+                  }
+                ]
+              },
+              "validators": [],
+              "hideWhenExpression": "isEmpty(currentHpv) || currentHpv !== 'a896f3a6-1350-11df-a1f1-0026b9348838'"
+            }
+          ]
+        },
+        {
+          "label": "VIA / VILI Test",
+          "isExpanded": "true",
+          "questions": [
+            {
+              "label": "VIA result on this visit",
+              "id": "currentViaOrVili",
+              "questionOptions": {
+                "concept": "",
+                "rendering": "select",
+                "answers": [
+                  {
+                    "concept": "",
+                    "label": "Negative"
+                  },
+                  {
+                    "concept": "",
+                    "label": "Positive"
+                  },
+                  {
+                    "concept": "",
+                    "label": "Suspicious for Cancer"
+                  }
+                ]
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "label": "Observations noted from VIA test",
+              "id": "viaObservations",
+              "questionOptions": {
+                "concept": "65634e0b-af9a-4b64-9255-0fa14e098077",
+                "rendering": "multiCheckbox",
+                "answers": [
+                  {
+                    "concept": "2e293b85-4915-48fe-ac36-5448ff0ffa3f",
+                    "label": "Abnormal vessels"
+                  },
+                  {
+                    "concept": "0dc3cb9a-67f0-4883-a681-c077641d9467",
+                    "label": "Aceto-white"
+                  },
+                  {
+                    "concept": "a0bda074-8e57-4ba7-ab9c-c008776f8d48",
+                    "label": "Excessive bleeding"
+                  },
+                  {
+                    "concept": "8d6d4d79-f9bc-4322-be06-668c9e9ca402",
+                    "label": "Friable tissue"
+                  },
+                  {
+                    "concept": "779e7248-301f-43c2-a24e-87d1cb13abfb",
+                    "label": "Punctuations"
+                  },
+                  {
+                    "concept": "be87ae99-9e94-4946-bee3-390a40bd8b23",
+                    "label": "Ulceration"
+                  }
+                ]
+              },
+              "validators": [],
+              "hide": {
+                "hideWhenExpression": "isEmpty(currentViaOrVili) || currentViaOrVili !== 'a896f3a6-1350-11df-a1f1-0026b9348838'"
+              }
+            }
+          ]
+        },
+        {
+          "label": "Breast Screening Findings",
+          "isExpanded": "true",
+          "questions": [
+            {
+              "label": "Screening findings",
+              "type": "obs",
+              "id": "CBE_test",
+              "questionOptions": {
+                "rendering": "select",
+                "concept": "3907fa56-d2d0-4143-89f5-bf70d843da23",
+                "answers": [
+                  {
+                    "concept": "a899e7b4-1350-11df-a1f1-0026b9348838",
+                    "label": "Normal"
+                  },
+                  {
+                    "concept": "a899e890-1350-11df-a1f1-0026b9348838",
+                    "label": "Abnormal"
+                  }
+                ]
+              },
+              "validators": []
+            }
+          ]
+        },
+        {
+          "label": "Concordance",
+          "isExpanded": "true",
+          "questions": [
+            {
+              "label": "CBE and imaging results concordance?",
+              "type": "obs",
+              "id": "CBECorncordance",
+              "required": "true",
+              "questionOptions": {
+                "rendering": "select",
+                "concept": "af8408ae-d42b-46d4-bf44-47dc32e311e4",
+                "answers": [
+                  {
+                    "concept": "a89ad3a4-1350-11df-a1f1-0026b9348838",
+                    "label": "Not applicable"
+                  },
+                  {
+                    "concept": "4302b3eb-e690-4204-8f9a-61f9b1574492",
+                    "label": "Concordant"
+                  },
+                  {
+                    "concept": "f16abbf8-f4f2-4f2a-ba24-3bdc7bb12079",
+                    "label": "Discordant"
+                  }
+                ]
+              },
+              "validators": []
+            }
+          ]
+        },
+        {
+          "label": "Breast Mammogram Findings",
+          "isExpanded": "true",
+          "questions": [
+            {
+              "label": "Mammogram results",
+              "id": "mamoResult",
+              "required": "true",
+              "type": "obs",
+              "questionOptions": {
+                "rendering": "select",
+                "concept": "c254c2d2-81e1-4507-b69b-cf0713942f2d",
+                "answers": [
+                  {
+                    "concept": "a899ea48-1350-11df-a1f1-0026b9348838",
+                    "label": "Not done"
+                  },
+                  {
+                    "concept": "a899e7b4-1350-11df-a1f1-0026b9348838",
+                    "label": "Normal"
+                  },
+                  {
+                    "concept": "a899e890-1350-11df-a1f1-0026b9348838",
+                    "label": "Abnormal"
+                  }
+                ]
+              },
+              "validators": []
+            },
+            {
+              "label": "Tumor size",
+              "id": "tumorSizeM",
+              "type": "obs",
+              "questionOptions": {
+                "rendering": "number",
+                "concept": "e967534f-058b-43fe-ac89-f22165de4d00",
+                "max": "50",
+                "min": "0"
+              },
+              "validators": [],
+              "hide": {
+                "hideWhenExpression": "isEmpty(mamoResult) || mamoResult === 'a899ea48-1350-11df-a1f1-0026b9348838'"
+              }
+            },
+            {
+              "label": "Mammogram workup date",
+              "id": "mamoDate",
+              "questionOptions": {
+                "concept": "a7567a7b-4d4b-494b-ab28-c5771be92eca",
+                "rendering": "date"
+              },
+              "type": "obs",
+              "validators": [
+                {
+                  "type": "date"
+                }
+              ],
+              "hide": {
+                "hideWhenExpression": "isEmpty(mamoResult) || mamoResult === 'a899ea48-1350-11df-a1f1-0026b9348838'"
+              }
+            },
+            {
+              "label": "Description of mammogram results",
+              "type": "obs",
+              "id": "mamoDescr",
+              "questionOptions": {
+                "concept": "4340fb76-0475-45f5-b346-828a8479be54",
+                "rendering": "text",
+                "rows": 3
+              },
+              "validators": [],
+              "hide": {
+                "hideWhenExpression": "isEmpty(mamoResult) || mamoResult === 'a899ea48-1350-11df-a1f1-0026b9348838'"
+              }
+            }
+          ]
+        },
+        {
+          "label": "Breast Ultrasound Findings",
+          "isExpanded": "true",
+          "questions": [
+            {
+              "label": "Breast ultrasound results",
+              "id": "ultrasResult",
+              "required": "true",
+              "type": "obs",
+              "questionOptions": {
+                "rendering": "select",
+                "concept": "9e2171e2-e4fa-43b9-bc98-380babcc0635",
+                "answers": [
+                  {
+                    "concept": "a899ea48-1350-11df-a1f1-0026b9348838",
+                    "label": "Not done"
+                  },
+                  {
+                    "concept": "a899e7b4-1350-11df-a1f1-0026b9348838",
+                    "label": "Normal"
+                  },
+                  {
+                    "concept": "a899e890-1350-11df-a1f1-0026b9348838",
+                    "label": "Abnormal"
+                  }
+                ]
+              },
+              "validators": []
+            },
+            {
+              "label": "Tumor size",
+              "id": "tumorSizeU",
+              "type": "obs",
+              "questionOptions": {
+                "rendering": "number",
+                "concept": "e967534f-058b-43fe-ac89-f22165de4d00",
+                "max": "50",
+                "min": "0"
+              },
+              "validators": [],
+              "hide": {
+                "hideWhenExpression": "isEmpty(ultrasResult) || ultrasResult === 'a899ea48-1350-11df-a1f1-0026b9348838'"
+              }
+            },
+            {
+              "label": "Ultrasound workup date",
+              "id": "ultraDate",
+              "questionOptions": {
+                "concept": "a7567a7b-4d4b-494b-ab28-c5771be92eca",
+                "rendering": "date"
+              },
+              "type": "obs",
+              "validators": [
+                {
+                  "type": "date"
+                }
+              ],
+              "hide": {
+                "hideWhenExpression": "isEmpty(ultrasResult) || ultrasResult === 'a899ea48-1350-11df-a1f1-0026b9348838'"
+              }
+            },
+            {
+              "label": "Description of ultrasound results",
+              "type": "obs",
+              "id": "ultrasDescr",
+              "questionOptions": {
+                "concept": "63547bc1-e7a5-4ce1-8148-003730da3a41",
+                "rendering": "text",
+                "rows": 3
+              },
+              "validators": [],
+              "hide": {
+                "hideWhenExpression": "isEmpty(ultrasResult) || ultrasResult === 'a899ea48-1350-11df-a1f1-0026b9348838'"
+              }
+            }
+          ]
+        },
+        {
+          "label": "FNA Findings",
+          "isExpanded": "true",
+          "questions": [
+            {
+              "label": "Fine needle aspiration (FNA) breast results",
+              "id": "FNAResult",
+              "required": "true",
+              "type": "obs",
+              "questionOptions": {
+                "rendering": "select",
+                "concept": "582f0289-7b1d-4369-8ab2-15e626ae8bfe",
+                "answers": [
+                  {
+                    "concept": "a899ea48-1350-11df-a1f1-0026b9348838",
+                    "label": "Not done"
+                  },
+                  {
+                    "concept": "81fbf994-255a-465a-9779-29945d779456",
+                    "label": "Benign"
+                  },
+                  {
+                    "concept": "18e540f5-ad54-41d8-b3aa-5b45e8d6d821",
+                    "label": "Malignant"
+                  }
+                ]
+              },
+              "validators": []
+            },
+            {
+              "label": "Specify the degree of malignancy",
+              "id": "malignancyDegree",
+              "type": "obs",
+              "questionOptions": {
+                "rendering": "select",
+                "concept": "338bb61b-f93b-46f6-ad5a-37735e005576",
+                "answers": [
+                  {
+                    "concept": "2a99821e-7c66-4c65-977b-98d956955ee2",
+                    "label": "Invasive cancer"
+                  },
+                  {
+                    "concept": "89fedb72-f73a-4be1-94a8-3627b244c786",
+                    "label": "In Situ cancer"
+                  }
+                ]
+              },
+              "validators": [],
+              "hide": {
+                "hideWhenExpression": "isEmpty(FNAResult) || FNAResult !== '18e540f5-ad54-41d8-b3aa-5b45e8d6d821'"
+              }
+            },
+            {
+              "label": "FNA workup date (Sample collection date)",
+              "id": "FnaWorkDate",
+              "questionOptions": {
+                "concept": "f889a0a8-e34c-43f7-8752-42114c8a25ad",
+                "rendering": "date"
+              },
+              "type": "obs",
+              "validators": [
+                {
+                  "type": "date"
+                }
+              ],
+              "hide": {
+                "hideWhenExpression": "isEmpty(FNAResult) || FNAResult === 'a899ea48-1350-11df-a1f1-0026b9348838'"
+              }
+            },
+            {
+              "label": "Description of FNA results",
+              "type": "obs",
+              "id": "FnaDescr",
+              "questionOptions": {
+                "concept": "ffbc5538-bf4f-4dde-9201-429eb33ed5f6",
+                "rendering": "text",
+                "rows": 3
+              },
+              "validators": [],
+              "hide": {
+                "hideWhenExpression": "isEmpty(FNAResult) || FNAResult === 'a899ea48-1350-11df-a1f1-0026b9348838'"
+              }
+            },
+            {
+              "label": "Diagnosis date",
+              "id": "DiagnosisDateFNA",
+              "questionOptions": {
+                "concept": "9ff2aae1-c03e-405e-bd11-39e06228a1a7",
+                "rendering": "date"
+              },
+              "type": "obs",
+              "validators": [
+                {
+                  "type": "date"
+                }
+              ],
+              "hide": {
+                "hideWhenExpression": "isEmpty(FNAResult) || FNAResult === 'a899ea48-1350-11df-a1f1-0026b9348838'"
+              }
+            }
+          ]
+        },
+        {
+          "label": "Biopsy Findings",
+          "isExpanded": "true",
+          "questions": [
+            {
+              "label": "Breast biopsy results",
+              "id": "BreastBiopsyResult",
+              "required": "true",
+              "type": "obs",
+              "questionOptions": {
+                "rendering": "select",
+                "concept": "2f4e06c0-10ad-4eed-bf9d-5429db202a09",
+                "answers": [
+                  {
+                    "concept": "a899ea48-1350-11df-a1f1-0026b9348838",
+                    "label": "Not done"
+                  },
+                  {
+                    "concept": "81fbf994-255a-465a-9779-29945d779456",
+                    "label": "Benign"
+                  },
+                  {
+                    "concept": "18e540f5-ad54-41d8-b3aa-5b45e8d6d821",
+                    "label": "Malignant"
+                  }
+                ]
+              },
+              "validators": []
+            },
+            {
+              "label": "Specify the type of malignancy",
+              "id": "malignancyType",
+              "required": "true",
+              "type": "obs",
+              "questionOptions": {
+                "rendering": "select",
+                "concept": "c2f2c606-52e2-488f-a758-9a6cee8afeb7",
+                "answers": [
+                  {
+                    "concept": "a4cd6a4f-38d2-4a19-b183-d111aa3c5c8c",
+                    "label": "Ductal carcinoma in situ"
+                  },
+                  {
+                    "concept": "5742741c-7141-4e44-a58c-a717e0031526",
+                    "label": "Inflammatory breast cancer"
+                  },
+                  {
+                    "concept": "9e27a08e-0cf4-47b8-81c5-84430e8bc097",
+                    "label": "Invasive ductal carcinoma (Ductal breast cancer)"
+                  },
+                  {
+                    "concept": "742adf9f-13eb-4744-8111-c17dad6c1c2a",
+                    "label": "Lobular carcinoma in situ"
+                  },
+                  {
+                    "concept": "89947573-121a-4e1a-bdd9-6706ab0833c8",
+                    "label": "Mammary Paget disease"
+                  },
+                  {
+                    "concept": "985087c5-47c8-45f1-a3a3-0ba870ad4558",
+                    "label": "Medullary carcinoma"
+                  },
+                  {
+                    "concept": "f6a9c626-75a0-484b-9f06-91b8440cdb77",
+                    "label": "Metaplastic carcinoma"
+                  },
+                  {
+                    "concept": "8759e8a9-7f93-4a05-a44f-22abaf96a06a",
+                    "label": "Mucinous (colloid) carcinoma"
+                  },
+                  {
+                    "concept": "0c682beb-41e4-4324-bb72-c1762adc3b2b",
+                    "label": "Papillary carcinoma"
+                  },
+                  {
+                    "concept": "0b496286-d858-445b-8adc-996418e34e5c",
+                    "label": "Phyllodes tumor"
+                  },
+                  {
+                    "concept": "88c8804c-5635-4094-9d5c-2d96dd229637",
+                    "label": "Tubular carcinoma"
+                  }
+                ]
+              },
+              "validators": [],
+              "hide": {
+                "hideWhenExpression": "isEmpty(BreastBiopsyResult) || BreastBiopsyResult !== '18e540f5-ad54-41d8-b3aa-5b45e8d6d821'"
+              }
+            },
+            {
+              "label": "Specify the grade/differentiation of the tumor",
+              "id": "tumorGrade",
+              "required": "true",
+              "type": "obs",
+              "questionOptions": {
+                "rendering": "select",
+                "concept": "e3f8871e-e494-43a9-924a-bc9adb5d4e39",
+                "answers": [
+                  {
+                    "concept": "ce6ded57-8932-4f18-b22e-36945c597f7a",
+                    "label": "Grade 1 (Well differentiated)"
+                  },
+                  {
+                    "concept": "ba4f47c7-1a4c-44eb-b496-64be070fdd54",
+                    "label": "Grade 2 (Moderately differentiated)"
+                  },
+                  {
+                    "concept": "34fb5de6-312a-4dcb-bcfb-449e1cdb4a7f",
+                    "label": "Grade 3 (Poorly differentiated)"
+                  }
+                ]
+              },
+              "validators": [],
+              "hide": {
+                "hideWhenExpression": "isEmpty(BreastBiopsyResult) || BreastBiopsyResult !== '18e540f5-ad54-41d8-b3aa-5b45e8d6d821'"
+              }
+            },
+            {
+              "label": "Breast biopsy sample collection date",
+              "id": "BiopsyWorkDate",
+              "questionOptions": {
+                "concept": "2ac87dfb-d493-4dac-b4f4-80c730b7310e",
+                "rendering": "date"
+              },
+              "type": "obs",
+              "validators": [
+                {
+                  "type": "date"
+                }
+              ],
+              "hide": {
+                "hideWhenExpression": "isEmpty(BreastBiopsyResult) || BreastBiopsyResult === 'a899ea48-1350-11df-a1f1-0026b9348838'"
+              }
+            },
+            {
+              "label": "Description of biopsy results",
+              "type": "obs",
+              "id": "BiopsyDescr",
+              "questionOptions": {
+                "concept": "222dfbf2-3f82-4df4-8c3c-f2d0002580a1",
+                "rendering": "text",
+                "rows": 3
+              },
+              "validators": [],
+              "hide": {
+                "hideWhenExpression": "isEmpty(BreastBiopsyResult) || BreastBiopsyResult === 'a899ea48-1350-11df-a1f1-0026b9348838'"
+              }
+            },
+            {
+              "label": "Histology reporting date",
+              "id": "DiagnosisDate",
+              "questionOptions": {
+                "concept": "9ff2aae1-c03e-405e-bd11-39e06228a1a7",
+                "rendering": "date"
+              },
+              "type": "obs",
+              "validators": [
+                {
+                  "type": "date"
+                }
+              ],
+              "hide": {
+                "hideWhenExpression": "isEmpty(BreastBiopsyResult) || BreastBiopsyResult === 'a899ea48-1350-11df-a1f1-0026b9348838'"
+              }
+            }
+          ]
+        },
+        {
+          "label": "Immunohistochemistry",
+          "isExpanded": "true",
+          "questions": [
+            {
+              "label": "ER",
+              "id": "erValue",
+              "type": "obs",
+              "questionOptions": {
+                "rendering": "select",
+                "concept": "7968f26e-c436-4e66-a24b-11eceb33755e",
+                "answers": [
+                  {
+                    "concept": "a896f3a6-1350-11df-a1f1-0026b9348838",
+                    "label": "+ve"
+                  },
+                  {
+                    "concept": "a896d2cc-1350-11df-a1f1-0026b9348838",
+                    "label": "-ve"
+                  }
+                ]
+              },
+              "validators": []
+            },
+            {
+              "label": "PR",
+              "id": "prValue",
+              "type": "obs",
+              "questionOptions": {
+                "rendering": "select",
+                "concept": "0629c03a-7813-43ba-8434-d0aaabd7be55",
+                "answers": [
+                  {
+                    "concept": "a896f3a6-1350-11df-a1f1-0026b9348838",
+                    "label": "+ve"
+                  },
+                  {
+                    "concept": "a896d2cc-1350-11df-a1f1-0026b9348838",
+                    "label": "-ve"
+                  }
+                ]
+              },
+              "validators": []
+            },
+            {
+              "label": "HER2",
+              "id": "herValue",
+              "type": "obs",
+              "questionOptions": {
+                "rendering": "select",
+                "concept": "739a9213-0420-448a-a899-33b3d71505a4",
+                "answers": [
+                  {
+                    "concept": "a896f3a6-1350-11df-a1f1-0026b9348838",
+                    "label": "+ve"
+                  },
+                  {
+                    "concept": "a896d2cc-1350-11df-a1f1-0026b9348838",
+                    "label": "-ve"
+                  }
+                ]
+              },
+              "validators": []
+            },
+            {
+              "label": "Ki67 (%)",
+              "id": "ki67Value",
+              "type": "obs",
+              "questionOptions": {
+                "rendering": "number",
+                "concept": "64fd5838-04bf-4908-a808-87d3d4dc3f24",
+                "min": "0",
+                "max": "100"
+              },
+              "validators": []
+            }
+          ],
+          "hide": {
+            "hideWhenExpression": "isEmpty(BreastBiopsyResult) || BreastBiopsyResult === 'a899ea48-1350-11df-a1f1-0026b9348838'"
+          }
+        },
+        {
+          "label": "Mode Of Screening",
+          "isExpanded": "true",
+          "questions": [
+            {
+              "label": "Mode of breast screening",
+              "id": "screenMode",
+              "required": "true",
+              "type": "obs",
+              "questionOptions": {
+                "rendering": "multiCheckbox",
+                "concept": "2031a62a-1297-4a8b-a855-59d6fa654373",
+                "answers": [
+                  {
+                    "concept": "0d7a3b97-11bd-4155-829c-2a552808b450",
+                    "label": "Detected by CBE"
+                  },
+                  {
+                    "concept": "c254c2d2-81e1-4507-b69b-cf0713942f2d",
+                    "label": "Detected by mammography"
+                  },
+                  {
+                    "concept": "9e2171e2-e4fa-43b9-bc98-380babcc0635",
+                    "label": "Detected by ultrasound "
+                  }
+                ]
+              },
+              "validators": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
