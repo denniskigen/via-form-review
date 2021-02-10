@@ -474,12 +474,12 @@
 					]
 				},
 				{
-					"label": "Procedure Done",
+					"label": "Procedures Done",
 					"isExpanded": "true",
 					"questions": [
 						{
 							"type": "obsGroup",
-							"label": "Procedure this visit",
+							"label": "Procedures done on this visit",
 							"id": "procedureVisit",
 							"questionOptions": {
 								"concept": "0dda52ff-15a0-434d-9685-78817e799a5c",
@@ -487,7 +487,7 @@
 							},
 							"questions": [
 								{
-									"label": "Procedure done this visit",
+									"label": "Which procedures were done on this visit?",
 									"id": "ProceDone",
 									"required": "true",
 									"questionOptions": {
@@ -497,10 +497,6 @@
 											{
 												"concept": "a899e0ac-1350-11df-a1f1-0026b9348838",
 												"label": "None"
-											},
-											{
-												"concept": "c3fb40a5-6c15-47ca-8d62-7a57a3f2f65a",
-												"label": "Biopsy"
 											},
 											{
 												"concept": "a0f80527-8410-44ec-ac58-546005464c34",
