@@ -107,123 +107,62 @@
           ]
         },
         {
-          "label": "Pap Smear Test",
+          "label": "Routine Screening",
           "isExpanded": "true",
           "questions": [
             {
-              "label": "Pap smear result on this visit",
-              "id": "currentPapSmear",
+              "label": "Mode of screening",
+              "type": "obs",
+              "id": "screeningMode",
               "questionOptions": {
-                "concept": "",
-                "rendering": "multiCheckbox",
-                "answers": [
-                  {
-                    "concept": "",
-                    "label": "Normal"
-                  },
-                  {
-                    "concept": "",
-                    "label": "ASCUS/ASC-H"
-                  },
-                  {
-                    "concept": "",
-                    "label": "LSIL"
-                  },
-                  {
-                    "concept": "",
-                    "label": "HSIL/CIS"
-                  },
-                  {
-                    "concept": "",
-                    "label": "AGUS"
-                  },
-                  {
-                    "concept": "",
-                    "label": "Invasive Cancer"
-                  }
-                ]
-              }
-            }
-          ]
-        },
-        {
-          "label": "HPV Test",
-          "isExpanded": "true",
-          "questions": [
-            {
-              "label": "HPV result on this visit",
-              "id": "currentHpv",
-              "questionOptions": {
-                "concept": "",
                 "rendering": "select",
+                "concept": "6750ddf9-bd32-4d8f-bee0-b5fc192a20a3",
                 "answers": [
                   {
-                    "concept": "",
-                    "label": "Negative"
+                    "concept": "b6d3b6cf-030e-4e35-8a91-7e3efe7ecd65",
+                    "label": "VIA / VILI"
                   },
                   {
-                    "concept": "",
-                    "label": "Positive"
+                    "concept": "a89b2dcc-1350-11df-a1f1-0026b9348838",
+                    "label": "HPV"
                   },
                   {
-                    "concept": "",
-                    "label": "Indeterminate"
-                  }
-                ]
-              }
-            },
-            {
-              "label": "HPV type",
-              "id": "hpvType",
-              "questionOptions": {
-                "concept": "",
-                "rendering": "select",
-                "answers": [
-                  {
-                    "concept": "",
-                    "label": "HPV-16"
-                  },
-                  {
-                    "concept": "",
-                    "label": "HPV-18"
+                    "concept": "a8983ff4-1350-11df-a1f1-0026b9348838",
+                    "label": "Pap smear"
                   }
                 ]
               },
-              "validators": [],
-              "hideWhenExpression": "isEmpty(currentHpv) || currentHpv !== 'a896f3a6-1350-11df-a1f1-0026b9348838'"
-            }
-          ]
-        },
-        {
-          "label": "VIA / VILI Test",
-          "isExpanded": "true",
-          "questions": [
+              "validators": []
+            },
             {
-              "label": "VIA result on this visit",
+              "label": "VIA / VILI test result",
+              "type": "obs",
               "id": "currentViaOrVili",
               "questionOptions": {
-                "concept": "",
                 "rendering": "select",
+                "concept": "b6d3b6cf-030e-4e35-8a91-7e3efe7ecd65",
                 "answers": [
                   {
-                    "concept": "",
+                    "concept": "a896d2cc-1350-11df-a1f1-0026b9348838",
                     "label": "Negative"
                   },
                   {
-                    "concept": "",
+                    "concept": "a896f3a6-1350-11df-a1f1-0026b9348838",
                     "label": "Positive"
                   },
                   {
-                    "concept": "",
+                    "concept": "260e6d24-1634-4467-a070-e8359f6827f7",
                     "label": "Suspicious for Cancer"
                   }
                 ]
               },
-              "type": "obs",
-              "validators": []
+              "validators": [],
+              "hide": {
+                "hideWhenExpression": "isEmpty(screeningMode) || screeningMode !== 'b6d3b6cf-030e-4e35-8a91-7e3efe7ecd65'"
+              }
             },
             {
-              "label": "Observations noted from VIA test",
+              "label": "Observations noted from positive VIA / VILI test",
               "id": "viaObservations",
               "questionOptions": {
                 "concept": "65634e0b-af9a-4b64-9255-0fa14e098077",
@@ -258,6 +197,98 @@
               "validators": [],
               "hide": {
                 "hideWhenExpression": "isEmpty(currentViaOrVili) || currentViaOrVili !== 'a896f3a6-1350-11df-a1f1-0026b9348838'"
+              }
+            },
+            {
+              "label": "HPV result",
+              "type": "obs",
+              "id": "currentHpv",
+              "questionOptions": {
+                "rendering": "select",
+                "concept": "a8a46fd6-1350-11df-a1f1-0026b9348838",
+                "answers": [
+                  {
+                    "concept": "a896d2cc-1350-11df-a1f1-0026b9348838",
+                    "label": "Negative"
+                  },
+                  {
+                    "concept": "a896f3a6-1350-11df-a1f1-0026b9348838",
+                    "label": "Positive"
+                  },
+                  {
+                    "concept": "a89a7ae4-1350-11df-a1f1-0026b9348838",
+                    "label": "Indeterminate"
+                  },
+                  {
+                    "concept": "a89c3d8e-1350-11df-a1f1-0026b9348838",
+                    "label": "Poor sample quality"
+                  }
+                ]
+              },
+              "validators": [],
+              "hide": {
+                "hideWhenExpression": "isEmpty(screeningMode) || screeningMode !== 'a89b2dcc-1350-11df-a1f1-0026b9348838'"
+              }
+            },
+            {
+              "label": "HPV type",
+              "id": "currentHpvType",
+              "questionOptions": {
+                "concept": "",
+                "rendering": "select",
+                "answers": [
+                  {
+                    "concept": "",
+                    "label": "HPV-16"
+                  },
+                  {
+                    "concept": "",
+                    "label": "HPV-18"
+                  }
+                ]
+              },
+              "validators": [],
+              "hide": {
+                "hideWhenExpression": "isEmpty(currentHpv) || currentHpv !== 'a896f3a6-1350-11df-a1f1-0026b9348838'"
+              }
+            },
+            {
+              "label": "Pap Smear Test",
+              "type": "obs",
+              "id": "currentPapSmear",
+              "questionOptions": {
+                "rendering": "multiCheckbox",
+                "concept": "e18f3f12-4ab6-49ae-8bf7-840ffdea309e",
+                "answers": [
+                  {
+                    "concept": "a899e7b4-1350-11df-a1f1-0026b9348838",
+                    "label": "Normal"
+                  },
+                  {
+                    "concept": "5f7bdc04-6bb5-4e2e-aa82-f84a5793f675",
+                    "label": "ASCUS/ASC-H"
+                  },
+                  {
+                    "concept": "6bc54b4a-2e87-4c33-8f9f-c5adf5dac037",
+                    "label": "LSIL"
+                  },
+                  {
+                    "concept": "21251f72-4ffe-47e2-a3b4-794c8c639fb9",
+                    "label": "HSIL/CIS"
+                  },
+                  {
+                    "concept": "e9099e9f-f4a0-4444-822f-d97618682c21",
+                    "label": "AGUS"
+                  },
+                  {
+                    "concept": "2a99821e-7c66-4c65-977b-98d956955ee2",
+                    "label": "Invasive Cancer"
+                  }
+                ]
+              },
+              "validators": [],
+              "hide": {
+                "hideWhenExpression": "isEmpty(screeningMode) || screeningMode !== 'a8983ff4-1350-11df-a1f1-0026b9348838'"
               }
             }
           ]
