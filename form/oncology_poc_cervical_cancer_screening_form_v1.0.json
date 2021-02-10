@@ -1,172 +1,315 @@
 {
-  "name": "Oncology POC Cervical Cancer Screening Form v1.0",
-  "processor": "EncounterFormProcessor",
-  "uuid": "xxxx",
-  "referencedForms": [],
-  "pages": [
-    {
-      "label": "Encounter Details",
-      "isExpanded": "true",
-      "questions": [
-        {
-          "type": "encounterDatetime",
-          "label": "Visit date",
-          "required": "true",
-          "default": "",
-          "id": "encDate",
-          "questionOptions": {
-            "rendering": "date"
-          },
-          "validators": [
-            {
-              "type": "date"
-            }
-          ]
-        },
-        {
-          "type": "encounterProvider",
-          "label": "Provider",
-          "id": "provider",
-          "required": "true",
-          "default": "",
-          "questionOptions": {
-            "rendering": "ui-select-extended"
-          }
-        },
-        {
-          "type": "encounterLocation",
-          "label": "Facility name (site/satellite clinic required)",
-          "id": "location",
-          "required": "true",
-          "questionOptions": {
-            "rendering": "ui-select-extended"
-          }
-        }
-      ]
-    },
-    {
-      "label": "Pre-Clinical Review",
-      "sections": []
-    },
-    {
-      "label": "Reproductive Health",
-      "sections": []
-    },
-    {
-      "label": "HIV Status",
-      "sections": []
-    },
-    {
-      "label": "Prior VIA",
-      "sections": []
-    },
-    {
-      "label": "Routine Screening",
-      "sections": []
-    },
-    {
-      "label": "Procedure Done",
-      "sections": []
-    },
-    {
-      "label": "Treatment Plan",
-      "sections": [
-        {
-          "label": "Pre-Cancer Treatment",
-          "isExpanded": "true",
-          "questions": [
-            {
-              "label": "What Pre-Cancer Treatment has been given to the patient?",
-              "questionOptions": {
-                "concept": "a899edcc-1350-11df-a1f1-0026b9348838",
-                "rendering": "select",
-                "answers": [
-                  {
-                    "concept": "",
-                    "label": "Cryotherapy"
-                  },
-                  {
-                    "concept": "",
-                    "label": "Thermocoagulation"
-                  },
-                  {
-                    "concept": "",
-                    "label": "LEEP"
-                  }
-                ]
-              }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "label": "Follow-up Plan",
-      "sections": []
-    },
-    {
-      "label": "Assessment",
-      "sections": [
-        {
-          "label": "Assessment Notes",
-          "isExpanded": "true",
-          "questions": [
-            {
-              "label": "Please enter your assessment below:",
-              "type": "obs",
-              "id": "assNote",
-              "required": "false",
-              "default": "",
-              "questionOptions": {
-                "concept": "23f710cc-7f9c-4255-9b6b-c3e240215dba",
-                "rendering": "textarea",
-                "rows": 20
-              }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "label": "Next Appointment",
-      "sections": [
-        {
-          "label": "Next Appointment",
-          "isExpanded": "true",
-          "questions": [
-            {
-              "label": "Return to clinic date:",
-              "type": "obs",
-              "required": "true",
-              "questionOptions": {
-                "concept": "a8a666ba-1350-11df-a1f1-0026b9348838",
-                "rendering": "date",
-                "weeksList": [
-                  2,
-                  4,
-                  9,
-                  13,
-                  26,
-                  52,
-                  104,
-                  156
-                ]
-              },
-              "validators": [
-                {
-                  "type": "date",
-                  "allowFutureDates": "true"
-                },
-                {
-                  "type": "js_expression",
-                  "failsWhenExpression": "(new moment(encDate)).isAfter((new moment(myValue)), 'day') || (new moment(encDate)).isSame((new moment(myValue)), 'day')",
-                  "message": "Return to clinic date should be greater than the encounter date."
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    }
-  ]
+	"name": "Oncology POC Cervical Cancer Screening Form v1.0",
+	"processor": "EncounterFormProcessor",
+	"uuid": "xxxx",
+	"referencedForms": [
+		{
+			"ref": {
+				"uuid": "540aae61-04ec-4f54-bed3-fcf4de4cf5a0",
+				"display": "Pre-Clinic Review component"
+			},
+			"formName": "component_oncology-preclinic-review-v1.2",
+			"alias": "pcr"
+		},
+		{
+			"ref": {
+				"uuid": "2c35c211-07e1-4941-8888-2be85d151664",
+				"display": "Reproductive Health component"
+			},
+			"formName": "component_oncology-reproductive-health-v1.0",
+			"alias": "rh"
+		},
+		{
+			"ref": {
+				"uuid": "66c39f79-e5da-4168-a4d1-0f45d6d2bf8d",
+				"display": "HIV Status component"
+			},
+			"formName": "component_oncology-adult-hiv-status-v1.1",
+			"alias": "ah"
+		},
+		{
+			"ref": {
+				"uuid": "71ff9ad7-7384-454f-a65a-c6b85bee1438",
+				"display": "Lab Results component"
+			},
+			"formName": "component_oncology-lab-results-v1.0",
+			"alias": "lr"
+		},
+		{
+			"ref": {
+				"uuid": "ad68f04a-a721-4674-8631-38f78b6d116c",
+				"display": "Visual Impression component"
+			},
+			"formName": "component_oncology-visual-impression-v1.0",
+			"alias": "vi"
+		},
+		{
+			"ref": {
+				"uuid": "36a51dd4-0a24-454c-b91b-ba41e30fc993",
+				"display": "Physical Examination component"
+			},
+			"formName": "component_oncology-physical-examination-v1.2",
+			"alias": "pe"
+		},
+		{
+			"ref": {
+				"uuid": "f7489599-1d84-42e0-806d-714933d45946",
+				"display": "Management Plan component"
+			},
+			"formName": "component_oncology-management-plan-v1.0",
+			"alias": "mp"
+		},
+		{
+			"ref": {
+				"uuid": "24067876-506f-4fcb-93c4-a4a42a9d498d",
+				"display": "Oncology Findings component"
+			},
+			"formName": "component_oncology-findings-v1.3",
+			"alias": "of"
+		}
+	],
+	"pages": [
+		{
+			"label": "Encounter Details",
+			"sections": [
+				{
+					"label": "Encounter Details",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "Visit date:",
+							"type": "encounterDatetime",
+							"required": "true",
+							"default": "",
+							"id": "encDate",
+							"questionOptions": {
+								"rendering": "date"
+							},
+							"validators": [
+								{
+									"type": "date"
+								}
+							]
+						},
+						{
+							"type": "encounterProvider",
+							"label": "Provider",
+							"id": "provider",
+							"required": "true",
+							"default": "",
+							"questionOptions": {
+								"rendering": "ui-select-extended"
+							}
+						},
+						{
+							"type": "encounterLocation",
+							"label": "Facility name (site/satellite clinic required)",
+							"id": "location",
+							"required": "true",
+							"questionOptions": {
+								"rendering": "ui-select-extended"
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"label": "Pre-Clinical Review",
+			"sections": [
+				{
+					"reference": {
+						"form": "pcr",
+						"page": "Pre-clinic Review",
+						"section": "Pre-Clinic Review"
+					}
+				}
+			]
+		},
+		{
+			"label": "Reproductive Health",
+			"sections": [
+				{
+					"reference": {
+						"form": "rh",
+						"page": "Reproductive health",
+						"section": "Reproductive History"
+					}
+				}
+			]
+		},
+		{
+			"label": "HIV Status",
+			"sections": [
+				{
+					"reference": {
+						"form": "ah",
+						"page": "Adult HIV Status",
+						"section": "HIV Status"
+					}
+				}
+			]
+		},
+		{
+			"label": "Prior VIA",
+			"sections": [
+				{
+					"reference": {
+						"form": "lr",
+						"page": "Test Results",
+						"section": "Prior VIA"
+					}
+				}
+			]
+		},
+		{
+			"label": "Routine Screening",
+			"sections": [
+				{
+					"reference": {
+						"form": "of",
+						"page": "Findings",
+						"section": "Routine Screening"
+					}
+				},
+				{
+					"reference": {
+						"form": "vi",
+						"page": "Visual Impression",
+						"section": "VIA Visual Impression"
+					}
+				}
+			]
+		},
+		{
+			"label": "Procedures Done",
+			"sections": [
+				{
+					"reference": {
+						"form": "pe",
+						"page": "Physical Examination",
+						"section": "Procedures Done"
+					}
+				}
+			]
+		},
+		{
+			"label": "Treatment Plan",
+			"sections": [
+				{
+					"label": "Pre-Cancer Treatment",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "What Pre-Cancer Treatment has the patient been put on?",
+							"type": "obs",
+							"id": "preCancerTreatment",
+							"required": "true",
+							"questionOptions": {
+								"concept": "",
+								"rendering": "select",
+								"answers": [
+									{
+										"concept": "",
+										"label": "Cryotherapy"
+									},
+									{
+										"concept": "",
+										"label": "LEEP"
+									},
+									{
+										"concept": "",
+										"label": "Pap Smear"
+									}
+								]
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"label": "Assessment",
+			"sections": [
+				{
+					"label": "Assessment Notes",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "Please enter your assessment below:",
+							"type": "obs",
+							"id": "assNote",
+							"required": "false",
+							"default": "",
+							"questionOptions": {
+								"concept": "23f710cc-7f9c-4255-9b6b-c3e240215dba",
+								"rendering": "textarea",
+								"rows": 20
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"label": "Follow-up Plan",
+			"sections": [
+				{
+					"reference": {
+						"form": "mp",
+						"page": "Management Plan",
+						"section": "VIA Management Plan"
+					}
+				},
+				{
+					"reference": {
+						"form": "mp",
+						"page": "Management Plan",
+						"section": "Referral for Management"
+					}
+				}
+			]
+		},
+		{
+			"label": "Next Appointment",
+			"sections": [
+				{
+					"label": "Next Appointment",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "Return to clinic date:",
+							"type": "obs",
+							"required": "true",
+							"questionOptions": {
+								"concept": "a8a666ba-1350-11df-a1f1-0026b9348838",
+								"rendering": "date",
+								"weeksList": [
+									2,
+									4,
+									9,
+									13,
+									26,
+									52,
+									104,
+									156
+								]
+							},
+							"validators": [
+								{
+									"type": "date",
+									"allowFutureDates": "true"
+								},
+								{
+									"type": "js_expression",
+									"failsWhenExpression": "(new moment(encDate)).isAfter((new moment(myValue)), 'day') || (new moment(encDate)).isSame((new moment(myValue)), 'day')",
+									"message": "Return to clinic date should be greater than the encounter date."
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
 }
