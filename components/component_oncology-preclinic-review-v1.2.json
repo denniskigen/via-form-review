@@ -75,27 +75,27 @@
 								"concept": "a89ff5c8-1350-11df-a1f1-0026b9348838",
 								"answers": [
 									{
-										"concept": "",
+										"concept": "ab202fa8-ad2b-487d-83f8-991f8fa109a1",
 										"label": "Initial screening"
 									},
 									{
-										"concept": "",
+										"concept": "a89526f2-1350-11df-a1f1-0026b9348838",
 										"label": "Routine screening"
 									},
 									{
-										"concept": "",
+										"concept": "19a7233b-2db1-4d7b-a2fb-4473e6b58f9d",
 										"label": "Post-Treatment screening"
 									},
 									{
-										"concept": "",
+										"concept": "a89adc46-1350-11df-a1f1-0026b9348838",
 										"label": "Treatment visit"
 									},
 									{
-										"concept": "",
+										"concept": "8893de9b-9553-49d4-84c1-a5b70ad7e666",
 										"label": "Post-Treatment"
 									},
 									{
-										"concept": "",
+										"concept": "a89ac184-1350-11df-a1f1-0026b9348838",
 										"label": "Complications"
 									}
 								]
