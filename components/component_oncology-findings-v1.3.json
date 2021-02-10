@@ -120,7 +120,7 @@
                 "answers": [
                   {
                     "concept": "b6d3b6cf-030e-4e35-8a91-7e3efe7ecd65",
-                    "label": "VIA / VILI"
+                    "label": "VIA/VILI"
                   },
                   {
                     "concept": "a89b2dcc-1350-11df-a1f1-0026b9348838",
@@ -135,7 +135,7 @@
               "validators": []
             },
             {
-              "label": "VIA / VILI test result",
+              "label": "VIA/VILI test result",
               "type": "obs",
               "id": "currentViaOrVili",
               "questionOptions": {
@@ -162,7 +162,7 @@
               }
             },
             {
-              "label": "Observations noted from positive VIA / VILI test",
+              "label": "Observations noted from positive VIA/VILI test",
               "id": "viaObservations",
               "questionOptions": {
                 "concept": "65634e0b-af9a-4b64-9255-0fa14e098077",
@@ -228,28 +228,6 @@
               "validators": [],
               "hide": {
                 "hideWhenExpression": "isEmpty(screeningMode) || screeningMode !== 'a89b2dcc-1350-11df-a1f1-0026b9348838'"
-              }
-            },
-            {
-              "label": "HPV type",
-              "id": "currentHpvType",
-              "questionOptions": {
-                "concept": "",
-                "rendering": "select",
-                "answers": [
-                  {
-                    "concept": "",
-                    "label": "HPV-16"
-                  },
-                  {
-                    "concept": "",
-                    "label": "HPV-18"
-                  }
-                ]
-              },
-              "validators": [],
-              "hide": {
-                "hideWhenExpression": "isEmpty(currentHpv) || currentHpv !== 'a896f3a6-1350-11df-a1f1-0026b9348838'"
               }
             },
             {
