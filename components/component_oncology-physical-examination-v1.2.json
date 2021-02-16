@@ -483,7 +483,7 @@
 							"id": "procedureVisit",
 							"questionOptions": {
 								"concept": "0dda52ff-15a0-434d-9685-78817e799a5c",
-								"rendering": "repeating"
+								"rendering": "group"
 							},
 							"questions": [
 								{
@@ -492,24 +492,28 @@
 									"required": "true",
 									"questionOptions": {
 										"concept": "c9e077f0-7a61-447a-937a-c96de21a7894",
-										"rendering": "select",
+										"rendering": "multiCheckbox",
 										"answers": [
 											{
 												"concept": "a899e0ac-1350-11df-a1f1-0026b9348838",
 												"label": "None"
 											},
 											{
+												"concept": "8893de9b-9553-49d4-84c1-a5b70ad7e666",
+												"label": "Cone biopsy"
+											},
+											{
+												"concept": "",
+												"label": "Endometrial biopsy"
+											},
+											{
+												"concept": "369dd7ae-7d43-429e-b76e-bcf5baf4f4b2",
+												"label": "Punch biopsy"
+											},
+											{
 												"concept": "a0f80527-8410-44ec-ac58-546005464c34",
 												"label": "Polypectomy"
 											},
-											{
-												"concept": "65a17fd9-f00f-4692-9106-51fe2d806088",
-												"label": "Core needle biopsy"
-											},
-                      {
-                        "concept": "",
-                        "label": "Cone biopsy"
-                      },
 											{
 												"label": "Other",
 												"concept": "a8aaf3e2-1350-11df-a1f1-0026b9348838"

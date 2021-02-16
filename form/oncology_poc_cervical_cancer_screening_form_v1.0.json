@@ -37,14 +37,6 @@
 		},
 		{
 			"ref": {
-				"uuid": "ad68f04a-a721-4674-8631-38f78b6d116c",
-				"display": "Visual Impression component"
-			},
-			"formName": "component_oncology-visual-impression-v1.0",
-			"alias": "vi"
-		},
-		{
-			"ref": {
 				"uuid": "36a51dd4-0a24-454c-b91b-ba41e30fc993",
 				"display": "Physical Examination component"
 			},
@@ -171,13 +163,6 @@
 						"page": "Findings",
 						"section": "Routine Screening"
 					}
-				},
-				{
-					"reference": {
-						"form": "vi",
-						"page": "Visual Impression",
-						"section": "VIA Visual Impression"
-					}
 				}
 			]
 		},
@@ -201,27 +186,120 @@
 					"isExpanded": "true",
 					"questions": [
 						{
-							"label": "What Pre-Cancer Treatment has the patient been put on?",
+							"label": "Treatment method",
 							"type": "obs",
 							"id": "preCancerTreatment",
 							"required": "true",
 							"questionOptions": {
-								"concept": "",
+								"concept": "94f54710-6ee0-45cd-ad5f-a990fcb47bc1",
 								"rendering": "select",
 								"answers": [
 									{
-										"concept": "",
+										"concept": "dcb72b0b-c1cb-4f32-aa82-e8f7b74cc16e",
 										"label": "Cryotherapy"
 									},
 									{
-										"concept": "",
+										"concept": "b6fccd82-c622-4c3e-9563-39899e709b3b",
 										"label": "LEEP"
 									},
 									{
-										"concept": "",
-										"label": "Pap Smear"
+										"concept": "a829a2a1-5ea5-400e-a3a5-2069f6d1e05b",
+										"label": "Thermocoagulation"
 									}
 								]
+							},
+							"validators": []
+						},
+						{
+							"label": "Status of cryotherapy",
+							"type": "obs",
+							"id": "cryoStatus",
+							"required": "true",
+							"questionOptions": {
+								"concept": "3559e1b4-4d8c-418d-9688-cef2616b14da",
+								"rendering": "select",
+								"answers": [
+									{
+										"concept": "1fa9c243-135a-4b31-935e-8046dbac14bb",
+										"label": "Done"
+									},
+									{
+										"concept": "5b91df2c-079f-4f92-8524-a1d9c80b874f",
+										"label": "Single Visit Approach"
+									},
+									{
+										"concept": "cf62a186-fbe1-420f-8dbf-350acb0a6dcd",
+										"label": "Postponed"
+									},
+									{
+										"concept": "0c5565c5-45cf-40ab-aa6d-5694aeabae18",
+										"label": "Referred"
+									}
+								]
+							},
+							"validators": [],
+							"hide": {
+								"hideWhenExpression": "isEmpty(preCancerTreatment) || preCancerTreatment !== 'dcb72b0b-c1cb-4f32-aa82-e8f7b74cc16e'"
+							}
+						},
+						{
+							"label": "Status of LEEP",
+							"type": "obs",
+							"id": "leepStatus",
+							"required": "true",
+							"questionOptions": {
+								"concept": "4d1f03ed-742e-4342-a853-c92094c12f9f",
+								"rendering": "select",
+								"answers": [
+									{
+										"concept": "5b91df2c-079f-4f92-8524-a1d9c80b874f",
+										"label": "Single Visit Approach"
+									},
+									{
+										"concept": "cf62a186-fbe1-420f-8dbf-350acb0a6dcd",
+										"label": "Postponed"
+									},
+									{
+										"concept": "0c5565c5-45cf-40ab-aa6d-5694aeabae18",
+										"label": "Referred for LEEP"
+									}
+								]
+							},
+							"validators": [],
+							"hide": {
+								"hideWhenExpression": "isEmpty(preCancerTreatment) || preCancerTreatment !== 'b6fccd82-c622-4c3e-9563-39899e709b3b'"
+							}
+						},
+						{
+							"label": "Status of thermocoagulation",
+							"type": "obs",
+							"id": "thermocoagStatus",
+							"required": "true",
+							"questionOptions": {
+								"concept": "42b79c20-8113-4af6-abb3-2897a19bd4a2",
+								"rendering": "select",
+								"answers": [
+									{
+										"concept": "1fa9c243-135a-4b31-935e-8046dbac14bb",
+										"label": "Done"
+									},
+									{
+										"concept": "5b91df2c-079f-4f92-8524-a1d9c80b874f",
+										"label": "Single Visit Approach"
+									},
+									{
+										"concept": "cf62a186-fbe1-420f-8dbf-350acb0a6dcd",
+										"label": "Postponed"
+									},
+									{
+										"concept": "0c5565c5-45cf-40ab-aa6d-5694aeabae18",
+										"label": "Referred"
+									}
+								]
+							},
+							"validators": [],
+							"hide": {
+								"hideWhenExpression": "isEmpty(preCancerTreatment) || preCancerTreatment !== 'a829a2a1-5ea5-400e-a3a5-2069f6d1e05b'"
 							}
 						}
 					]
@@ -236,7 +314,7 @@
 					"isExpanded": "true",
 					"questions": [
 						{
-							"label": "Please enter your assessment below:",
+							"label": "Please enter your assessment below",
 							"type": "obs",
 							"id": "assNote",
 							"required": "false",
@@ -244,7 +322,7 @@
 							"questionOptions": {
 								"concept": "23f710cc-7f9c-4255-9b6b-c3e240215dba",
 								"rendering": "textarea",
-								"rows": 20
+								"rows": 10
 							}
 						}
 					]
@@ -255,18 +333,85 @@
 			"label": "Follow-up Plan",
 			"sections": [
 				{
-					"reference": {
-						"form": "mp",
-						"page": "Management Plan",
-						"section": "VIA Management Plan"
-					}
+					"label": "Follow-up Plan",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "Follow-up plan",
+							"id": "viaPlan",
+							"required": "true",
+							"questionOptions": {
+								"concept": "a2583303-bb32-4eed-9ec8-0b7bb5e778a9",
+								"rendering": "select",
+								"answers": [
+									{
+										"concept": "643f3157-e7b9-4731-a767-75636fd23054",
+										"label": "Return for results"
+									},
+									{
+										"concept": "678d493f-bdfe-440b-a87a-6153552939cd",
+										"label": "VIA follow up in 3 to 6 months"
+									},
+									{
+										"concept": "57faac4e-1221-4b88-8948-f6ee24c5f0eb",
+										"label": "Routine yearly VIA"
+									},
+									{
+										"concept": "be9da123-70dd-4800-8d62-c3fa9a621627",
+										"label": "Routine 3 year VIA"
+									},
+									{
+										"concept": "44ffeaba-ffeb-4aa5-a141-3f144b75d3cb",
+										"label": "Colposcopy planned"
+									},
+									{
+										"concept": "f1ff60fd-df32-44df-904d-a50fc5c89ec1",
+										"label": "Gynecologic Oncology clinic referral"
+									},
+									{
+										"concept": "a8aaf3e2-1350-11df-a1f1-0026b9348838",
+										"label": "Other"
+									}
+								]
+							},
+							"type": "obs",
+							"validators": [
+								{
+									"type": "js_expression",
+									"failsWhenExpression": "!isEmpty(hivStatus) && hivStatus === 'a896f3a6-1350-11df-a1f1-0026b9348838' && !isEmpty(myValue) && arrayContains(['be9da123-70dd-4800-8d62-c3fa9a621627'], myValue)",
+									"message": "Patient HIV status marked as HIV positive in HIV status section. Therefore plan can not be Routine 3 year VIA"
+								}
+							]
+						},
+						{
+							"label": " Other (specify)",
+							"type": "obs",
+							"questionOptions": {
+								"concept": "a8a06fc6-1350-11df-a1f1-0026b9348838",
+								"rendering": "text",
+								"placeholder": "Indicate other management plan"
+							},
+							"validators": [],
+							"hide": {
+								"hideWhenExpression": "isEmpty(viaPlan) || arrayContains(['643f3157-e7b9-4731-a767-75636fd23054','678d493f-bdfe-440b-a87a-6153552939cd', '57faac4e-1221-4b88-8948-f6ee24c5f0eb', 'be9da123-70dd-4800-8d62-c3fa9a621627', '44ffeaba-ffeb-4aa5-a141-3f144b75d3cb', 'f1ff60fd-df32-44df-904d-a50fc5c89ec1'],viaPlan)"
+							}
+						}
+					]
 				},
 				{
-					"reference": {
-						"form": "mp",
-						"page": "Management Plan",
-						"section": "Referral for Management"
-					}
+					"label": "Referral for Management",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"type": "personAttribute",
+							"label": "Specify which AMPATH facility the patient is being referred to",
+							"id": "referralLocation",
+							"questionOptions": {
+								"rendering": "ui-select-extended",
+								"attributeType": "8d87236c-c2cc-11de-8d13-0010c6dffd0f"
+							}
+						}
+					]
 				}
 			]
 		},
@@ -278,7 +423,7 @@
 					"isExpanded": "true",
 					"questions": [
 						{
-							"label": "Return to clinic date:",
+							"label": "Return to clinic date",
 							"type": "obs",
 							"required": "true",
 							"questionOptions": {
