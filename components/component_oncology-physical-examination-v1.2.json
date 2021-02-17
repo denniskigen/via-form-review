@@ -524,16 +524,16 @@
 									"validators": []
 								},
 								{
-									"label": "Other procedure (specify):",
+									"label": "Which other procedures were done that are not listed above?",
 									"type": "obs",
 									"questionOptions": {
 										"concept": "a8a06fc6-1350-11df-a1f1-0026b9348838",
 										"rendering": "text",
-										"placeholder": "Indicate other procedure done"
+										"placeholder": "Specify other procedures done"
 									},
 									"validators": [],
 									"hide": {
-										"hideWhenExpression": "ProceDone !== 'a8aaf3e2-1350-11df-a1f1-0026b9348838'"
+										"hideWhenExpression": "isEmpty(ProceDone) || arrayContains(['a899e0ac-1350-11df-a1f1-0026b9348838', '8893de9b-9553-49d4-84c1-a5b70ad7e666', '369dd7ae-7d43-429e-b76e-bcf5baf4f4b2','a0f80527-8410-44ec-ac58-546005464c34'], ProceDone)"
 									}
 								}
 							]
