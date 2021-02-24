@@ -121,11 +121,7 @@
 								"answers": [
 									{
 										"concept": "b6d3b6cf-030e-4e35-8a91-7e3efe7ecd65",
-										"label": "VIA"
-									},
-									{
-										"concept": "7fa8f5d2-d080-4d8e-8b9a-0b5eede2419f",
-										"label": "VILI"
+										"label": "VIA or VIA/VILI"
 									},
 									{
 										"concept": "a89b2dcc-1350-11df-a1f1-0026b9348838",
@@ -140,7 +136,7 @@
 							"validators": []
 						},
 						{
-							"label": "VIA test result",
+							"label": "VIA or VIA/VILI test result",
 							"type": "obs",
 							"id": "currentVia",
 							"questionOptions": {
@@ -167,8 +163,9 @@
 							}
 						},
 						{
-							"label": "Observations noted from positive VIA test",
+							"label": "Observations noted from positive VIA or VIA/VILI test",
 							"id": "viaObservations",
+							"type": "obs",
 							"questionOptions": {
 								"concept": "65634e0b-af9a-4b64-9255-0fa14e098077",
 								"rendering": "multiCheckbox",
@@ -196,39 +193,16 @@
 									{
 										"concept": "be87ae99-9e94-4946-bee3-390a40bd8b23",
 										"label": "Ulceration"
+									},
+									{
+										"concept": "71d6f6d5-9d40-4592-a04d-0a0f796bcb26",
+										"label": "Yellow-staining lesion"
 									}
 								]
 							},
 							"validators": [],
 							"hide": {
 								"hideWhenExpression": "isEmpty(currentVia) || currentVia !== 'a896f3a6-1350-11df-a1f1-0026b9348838'"
-							}
-						},
-						{
-							"label": "VILI test result",
-							"type": "obs",
-							"id": "currentVili",
-							"questionOptions": {
-								"rendering": "select",
-								"concept": "7fa8f5d2-d080-4d8e-8b9a-0b5eede2419f",
-								"answers": [
-									{
-										"concept": "a896d2cc-1350-11df-a1f1-0026b9348838",
-										"label": "Negative"
-									},
-									{
-										"concept": "a896f3a6-1350-11df-a1f1-0026b9348838",
-										"label": "Positive"
-									},
-									{
-										"concept": "260e6d24-1634-4467-a070-e8359f6827f7",
-										"label": "Suspicious for Cancer"
-									}
-								]
-							},
-							"validators": [],
-							"hide": {
-								"hideWhenExpression": "isEmpty(screeningMethod) || screeningMethod !== '7fa8f5d2-d080-4d8e-8b9a-0b5eede2419f'"
 							}
 						},
 						{
@@ -330,7 +304,7 @@
 									},
 									{
 										"concept": "a89a7ae4-1350-11df-a1f1-0026b9348838",
-										"label": "Indeterminate"
+										"label": "Unknown"
 									}
 								]
 							},
@@ -340,11 +314,38 @@
 							}
 						},
 						{
+							"label": "HPV type",
+							"type": "obs",
+							"id": "hpvType",
+							"questionOptions": {
+								"rendering": "select",
+								"concept": "86f923bb-d4c8-4bb1-8fe8-f01c518ba782",
+								"answers": [
+									{
+										"concept": "c4e39e88-9aab-442b-85aa-df82bf31b748",
+										"label": "PCR - HPV TYPE 16"
+									},
+									{
+										"concept": "beff241a-25da-4584-b340-870d9e8a7037",
+										"label": "PCR - HPV TYPE 18"
+									},
+									{
+										"concept": "82687078-ebd1-46ef-b34f-2a65081fb2c4",
+										"label": "HPV TYPE 45"
+									}
+								]
+							},
+							"validators": [],
+							"hide": {
+								"hideWhenExpression": "isEmpty(currentHpv) || currentHpv !== 'a896f3a6-1350-11df-a1f1-0026b9348838'"
+							}
+						},
+						{
 							"label": "Pap smear test result",
 							"type": "obs",
 							"id": "currentPapSmear",
 							"questionOptions": {
-								"rendering": "multiCheckbox",
+								"rendering": "select",
 								"concept": "e18f3f12-4ab6-49ae-8bf7-840ffdea309e",
 								"answers": [
 									{

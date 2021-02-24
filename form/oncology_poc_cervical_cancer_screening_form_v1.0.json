@@ -167,13 +167,13 @@
 			]
 		},
 		{
-			"label": "Procedures Done",
+			"label": "Procedure Done",
 			"sections": [
 				{
 					"reference": {
 						"form": "pe",
 						"page": "Physical Examination",
-						"section": "Procedures Done"
+						"section": "Procedure Done"
 					}
 				}
 			]
@@ -195,6 +195,10 @@
 								"rendering": "select",
 								"answers": [
 									{
+										"concept": "a899e0ac-1350-11df-a1f1-0026b9348838",
+										"label": "None"
+									},
+									{
 										"concept": "dcb72b0b-c1cb-4f32-aa82-e8f7b74cc16e",
 										"label": "Cryotherapy"
 									},
@@ -205,10 +209,27 @@
 									{
 										"concept": "a829a2a1-5ea5-400e-a3a5-2069f6d1e05b",
 										"label": "Thermocoagulation"
+									},
+									{
+										"concept": "a89ebb04-1350-11df-a1f1-0026b9348838",
+										"label": "Other treatment methods e.g. Hysterectomy, Cone biopsy"
 									}
 								]
 							},
 							"validators": []
+						},
+						{
+							"label": "Other treatment methods not listed above",
+							"type": "obs",
+							"id": "otherTreatmentMethod",
+							"questionOptions": {
+								"concept": "dc15823d-e6ec-48fc-beac-bc4239d9bfcb",
+								"rendering": "text"
+							},
+							"validators": [],
+							"hide": {
+								"hideWhenExpression": "isEmpty(preCancerTreatment) || preCancerTreatment != 'a89ebb04-1350-11df-a1f1-0026b9348838'"
+							}
 						},
 						{
 							"label": "Status of cryotherapy",
@@ -317,7 +338,6 @@
 							"label": "Please enter your assessment below",
 							"type": "obs",
 							"id": "assNote",
-							"required": "false",
 							"default": "",
 							"questionOptions": {
 								"concept": "23f710cc-7f9c-4255-9b6b-c3e240215dba",
@@ -367,10 +387,6 @@
 									{
 										"concept": "f1ff60fd-df32-44df-904d-a50fc5c89ec1",
 										"label": "Gynecologic Oncology clinic referral"
-									},
-									{
-										"concept": "a8aaf3e2-1350-11df-a1f1-0026b9348838",
-										"label": "Other"
 									}
 								]
 							},
@@ -382,19 +398,6 @@
 									"message": "Patient HIV status marked as HIV positive in HIV status section. Therefore plan can not be Routine 3 year VIA"
 								}
 							]
-						},
-						{
-							"label": " Other (specify)",
-							"type": "obs",
-							"questionOptions": {
-								"concept": "a8a06fc6-1350-11df-a1f1-0026b9348838",
-								"rendering": "text",
-								"placeholder": "Indicate other management plan"
-							},
-							"validators": [],
-							"hide": {
-								"hideWhenExpression": "isEmpty(viaPlan) || arrayContains(['643f3157-e7b9-4731-a767-75636fd23054','678d493f-bdfe-440b-a87a-6153552939cd', '57faac4e-1221-4b88-8948-f6ee24c5f0eb', 'be9da123-70dd-4800-8d62-c3fa9a621627', '44ffeaba-ffeb-4aa5-a141-3f144b75d3cb', 'f1ff60fd-df32-44df-904d-a50fc5c89ec1'],viaPlan)"
-							}
 						}
 					]
 				},
@@ -404,11 +407,11 @@
 					"questions": [
 						{
 							"type": "personAttribute",
-							"label": "Specify which AMPATH facility the patient is being referred to",
+							"label": "Specify the AMPATH facility that the patient is being referred to",
 							"id": "referralLocation",
 							"questionOptions": {
 								"rendering": "ui-select-extended",
-								"attributeType": "8d87236c-c2cc-11de-8d13-0010c6dffd0f"
+								"attributeType": "7ef225db-94db-4e40-9dd8-fb121d9dc370"
 							}
 						}
 					]
